@@ -6,16 +6,16 @@
   <link rel="stylesheet" href="../../diagram/diagram.css?v=map-prop-hot">
 </head>
 <body>
-<main class="emd" style="--slices: 18" data-joins="evt-registration-opened:rmo-signup-qr,evt-attendee-registered-pat:rmo-signup-confirmation,evt-attendee-registered-pat:rmo-topic-ballot,evt-attendee-registered-riley:rmo-topic-ballot,evt-attendee-registered-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-topic-ballot,evt-topic-suggested-riley:rmo-topic-ballot,evt-topic-suggested-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-agenda-builder,evt-topic-suggested-riley:rmo-agenda-builder,evt-topic-suggested-jordan:rmo-agenda-builder,evt-topic-voted-pat:rmo-agenda-builder,evt-topic-voted-riley:rmo-agenda-builder,evt-topic-voted-jordan:rmo-agenda-builder,evt-session-scheduled-1:rmo-agenda,evt-session-scheduled-2:rmo-agenda">
+<main class="emd" style="--slices: 20" data-joins="evt-registration-opened:rmo-signup-qr,evt-attendee-registered-pat:rmo-signup-confirmation,evt-attendee-registered-pat:rmo-topic-ballot,evt-attendee-registered-riley:rmo-topic-ballot,evt-attendee-registered-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-topic-ballot,evt-topic-suggested-riley:rmo-topic-ballot,evt-topic-suggested-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-agenda-builder,evt-topic-suggested-riley:rmo-agenda-builder,evt-topic-suggested-jordan:rmo-agenda-builder,evt-topic-voted-pat:rmo-agenda-builder,evt-topic-voted-riley:rmo-agenda-builder,evt-topic-voted-jordan:rmo-agenda-builder,evt-session-scheduled-1:rmo-agenda,evt-session-scheduled-2:rmo-agenda,err-name-required:scr-signup-form-jordan-error">
   <div class="sheet">
   <div class="board">
     <div class="cell lane emd-corner"></div>
     <div class="cell wfl" data-slc="1" data-span="2"><span>Open registration</span></div>
-    <div class="cell wfl" data-slc="3" data-span="4"><span>Sign up as an attendee</span></div>
-    <div class="cell wfl" data-slc="7" data-span="3"><span>Suggest a topic</span></div>
-    <div class="cell wfl" data-slc="10" data-span="4"><span>Vote on topics</span></div>
-    <div class="cell wfl" data-slc="14" data-span="1"><span>Close registration</span></div>
-    <div class="cell wfl" data-slc="15" data-span="4"><span>Build the agenda</span></div>
+    <div class="cell wfl" data-slc="3" data-span="6"><span>Sign up as an attendee</span></div>
+    <div class="cell wfl" data-slc="9" data-span="3"><span>Suggest a topic</span></div>
+    <div class="cell wfl" data-slc="12" data-span="4"><span>Vote on topics</span></div>
+    <div class="cell wfl" data-slc="16" data-span="1"><span>Close registration</span></div>
+    <div class="cell wfl" data-slc="17" data-span="4"><span>Build the agenda</span></div>
     <div class="cell lane open">Alex (Organizer)</div>
     <div class="cell uba" data-slc="1" data-lane="alex">
       <article class="scr" id="scr-open-registration-form">
@@ -58,13 +58,16 @@
     <div class="cell uba" data-slc="5" data-lane="alex"></div>
     <div class="cell uba" data-slc="6" data-lane="alex"></div>
     <div class="cell uba" data-slc="7" data-lane="alex"></div>
+
     <div class="cell uba" data-slc="8" data-lane="alex"></div>
     <div class="cell uba" data-slc="9" data-lane="alex"></div>
     <div class="cell uba" data-slc="10" data-lane="alex"></div>
     <div class="cell uba" data-slc="11" data-lane="alex"></div>
     <div class="cell uba" data-slc="12" data-lane="alex"></div>
     <div class="cell uba" data-slc="13" data-lane="alex"></div>
-    <div class="cell uba" data-slc="14" data-lane="alex">
+    <div class="cell uba" data-slc="14" data-lane="alex"></div>
+    <div class="cell uba" data-slc="15" data-lane="alex"></div>
+    <div class="cell uba" data-slc="16" data-lane="alex">
       <article class="scr" id="scr-close-registration">
         <h2>Close Registration</h2>
         <div class="wire">
@@ -82,7 +85,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="15" data-lane="alex">
+    <div class="cell uba" data-slc="17" data-lane="alex">
       <article class="scr" id="scr-agenda-builder">
         <h2>Agenda Builder</h2>
         <div class="wire">
@@ -106,7 +109,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="16" data-lane="alex">
+    <div class="cell uba" data-slc="18" data-lane="alex">
       <article class="scr" id="scr-schedule-session-1">
         <h2>Agenda Builder</h2>
         <div class="wire">
@@ -131,7 +134,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="17" data-lane="alex">
+    <div class="cell uba" data-slc="19" data-lane="alex">
       <article class="scr" id="scr-schedule-session-2">
         <h2>Agenda Builder</h2>
         <div class="wire">
@@ -156,7 +159,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="18" data-lane="alex">
+    <div class="cell uba" data-slc="20" data-lane="alex">
       <article class="scr" id="scr-agenda-alex">
         <h2>Agenda</h2>
         <div class="wire">
@@ -232,7 +235,10 @@
     </div>
     <div class="cell uba" data-slc="5" data-lane="pat"></div>
     <div class="cell uba" data-slc="6" data-lane="pat"></div>
-    <div class="cell uba" data-slc="7" data-lane="pat">
+    <div class="cell uba" data-slc="7" data-lane="pat"></div>
+
+    <div class="cell uba" data-slc="8" data-lane="pat"></div>
+    <div class="cell uba" data-slc="9" data-lane="pat">
       <article class="scr" id="scr-suggest-topic-pat">
         <h2>Suggest Topic Form</h2>
         <div class="wire">
@@ -250,9 +256,9 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="8" data-lane="pat"></div>
-    <div class="cell uba" data-slc="9" data-lane="pat"></div>
-    <div class="cell uba" data-slc="10" data-lane="pat">
+    <div class="cell uba" data-slc="10" data-lane="pat"></div>
+    <div class="cell uba" data-slc="11" data-lane="pat"></div>
+    <div class="cell uba" data-slc="12" data-lane="pat">
       <article class="scr" id="scr-topic-ballot-pat">
         <h2>Topic Ballot</h2>
         <div class="wire">
@@ -276,7 +282,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="11" data-lane="pat">
+    <div class="cell uba" data-slc="13" data-lane="pat">
       <article class="scr" id="scr-topic-ballot-pat-vote">
         <h2>Topic Ballot</h2>
         <div class="wire">
@@ -297,22 +303,8 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="12" data-lane="pat"></div>
-    <div class="cell uba" data-slc="13" data-lane="pat"></div>
-    <div class="cell uba" data-slc="14" data-lane="pat">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="15" data-lane="pat">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
+    <div class="cell uba" data-slc="14" data-lane="pat"></div>
+    <div class="cell uba" data-slc="15" data-lane="pat"></div>
     <div class="cell uba" data-slc="16" data-lane="pat">
       <div class="gap">
         <div class="arr v">
@@ -328,6 +320,20 @@
       </div>
     </div>
     <div class="cell uba" data-slc="18" data-lane="pat">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="19" data-lane="pat">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="20" data-lane="pat">
       <article class="scr" id="scr-agenda-pat">
         <h2>Agenda</h2>
         <div class="wire">
@@ -398,14 +404,17 @@
       </div>
     </div>
     <div class="cell uba" data-slc="6" data-lane="riley"></div>
-    <div class="cell uba" data-slc="7" data-lane="riley">
+    <div class="cell uba" data-slc="7" data-lane="riley"></div>
+
+    <div class="cell uba" data-slc="8" data-lane="riley"></div>
+    <div class="cell uba" data-slc="9" data-lane="riley">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="8" data-lane="riley">
+    <div class="cell uba" data-slc="10" data-lane="riley">
       <article class="scr" id="scr-suggest-topic-riley">
         <h2>Suggest Topic Form</h2>
         <div class="wire">
@@ -423,22 +432,22 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="9" data-lane="riley"></div>
-    <div class="cell uba" data-slc="10" data-lane="riley">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="11" data-lane="riley">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
+    <div class="cell uba" data-slc="11" data-lane="riley"></div>
     <div class="cell uba" data-slc="12" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="13" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="14" data-lane="riley">
       <article class="scr" id="scr-topic-ballot-riley">
         <h2>Topic Ballot</h2>
         <div class="wire">
@@ -459,21 +468,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="13" data-lane="riley"></div>
-    <div class="cell uba" data-slc="14" data-lane="riley">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="15" data-lane="riley">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
+    <div class="cell uba" data-slc="15" data-lane="riley"></div>
     <div class="cell uba" data-slc="16" data-lane="riley">
       <div class="gap">
         <div class="arr v">
@@ -489,6 +484,20 @@
       </div>
     </div>
     <div class="cell uba" data-slc="18" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="19" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="20" data-lane="riley">
       <article class="scr" id="scr-agenda-riley">
         <h2>Agenda</h2>
         <div class="wire">
@@ -548,6 +557,44 @@
       </div>
     </div>
     <div class="cell uba" data-slc="6" data-lane="jordan">
+      <article class="scr" id="scr-signup-form-jordan-empty">
+        <h2>Signup Form</h2>
+        <div class="wire">
+          <div class="col">
+            <p class="heading">Sign Up</p>
+            <p class="label">title Adaptech Unconference 2026</p>
+            <label class="text">name <input value="" readonly></label>
+            <div class="row end"><button type="button">Sign up</button></div>
+          </div>
+        </div>
+      </article>
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="7" data-lane="jordan">
+      <article class="scr" id="scr-signup-form-jordan-error">
+        <h2>Signup Form</h2>
+        <div class="wire">
+          <div class="col">
+            <p class="heading">Sign Up</p>
+            <p class="label">title Adaptech Unconference 2026</p>
+            <label class="text">name <input value="" readonly></label>
+            <p class="label">message Name is required</p>
+            <div class="row end"><button type="button">Sign up</button></div>
+          </div>
+        </div>
+      </article>
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell uba" data-slc="8" data-lane="jordan">
       <article class="scr" id="scr-signup-form-jordan">
         <h2>Signup Form</h2>
         <div class="wire">
@@ -565,21 +612,21 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="7" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="8" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
     <div class="cell uba" data-slc="9" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="10" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="11" data-lane="jordan">
       <article class="scr" id="scr-suggest-topic-jordan">
         <h2>Suggest Topic Form</h2>
         <div class="wire">
@@ -597,20 +644,6 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="10" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="11" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
     <div class="cell uba" data-slc="12" data-lane="jordan">
       <div class="gap">
         <div class="arr v">
@@ -619,20 +652,6 @@
       </div>
     </div>
     <div class="cell uba" data-slc="13" data-lane="jordan">
-      <article class="scr" id="scr-topic-ballot-jordan">
-        <h2>Topic Ballot</h2>
-        <div class="wire">
-          <div class="col">
-            <p class="heading">Topics</p>
-            <table>
-              <thead><tr><th>title</th><th>kind</th><th></th></tr></thead>
-              <tbody>
-                <tr><td>Event Sourcing in Practice</td><td>presentation</td><td><button type="button">Vote</button></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </article>
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -647,6 +666,20 @@
       </div>
     </div>
     <div class="cell uba" data-slc="15" data-lane="jordan">
+      <article class="scr" id="scr-topic-ballot-jordan">
+        <h2>Topic Ballot</h2>
+        <div class="wire">
+          <div class="col">
+            <p class="heading">Topics</p>
+            <table>
+              <thead><tr><th>title</th><th>kind</th><th></th></tr></thead>
+              <tbody>
+                <tr><td>Event Sourcing in Practice</td><td>presentation</td><td><button type="button">Vote</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -668,6 +701,20 @@
       </div>
     </div>
     <div class="cell uba" data-slc="18" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="19" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="20" data-lane="jordan">
       <article class="scr" id="scr-agenda-jordan">
         <h2>Agenda</h2>
         <div class="wire">
@@ -798,6 +845,29 @@
           <div class="tile arrow-down"></div>
         </div>
       </div>
+      <article class="com" id="com-register-attendee-jordan-empty">
+        <h2>Register Attendee</h2>
+        <dl class="props">
+          <div><dt>eventId</dt><dd>E-1</dd></div>
+          <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+          <div><dt>name</dt><dd></dd></div>
+        </dl>
+      </article>
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell mba" data-slc="7"></div>
+
+    <div class="cell mba" data-slc="8">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+      </div>
       <article class="com" id="com-register-attendee-jordan">
         <h2>Register Attendee</h2>
         <dl class="props">
@@ -813,7 +883,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="7">
+    <div class="cell mba" data-slc="9">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -836,7 +906,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="8">
+    <div class="cell mba" data-slc="10">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -859,7 +929,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="9">
+    <div class="cell mba" data-slc="11">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -882,7 +952,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="10">
+    <div class="cell mba" data-slc="12">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -892,6 +962,9 @@
       <article class="rmo" id="rmo-topic-ballot">
         <h2>Topic Ballot</h2>
         <dl class="props">
+          <div><dt>lookup A-1</dt><dd>Pat Lee</dd></div>
+          <div><dt>lookup A-2</dt><dd>Riley Ng</dd></div>
+          <div><dt>lookup A-3</dt><dd>Jordan Ortiz</dd></div>
           <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · Pat Lee</dd></div>
           <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · Riley Ng</dd></div>
           <div><dt>T-3</dt><dd>Lunch spots nearby · suggestion · Jordan Ortiz</dd></div>
@@ -899,7 +972,7 @@
       </article>
       <div class="gap"></div>
     </div>
-    <div class="cell mba" data-slc="11">
+    <div class="cell mba" data-slc="13">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -920,7 +993,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="12">
+    <div class="cell mba" data-slc="14">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -941,7 +1014,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="13">
+    <div class="cell mba" data-slc="15">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -962,7 +1035,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="14">
+    <div class="cell mba" data-slc="16">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -981,7 +1054,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="15">
+    <div class="cell mba" data-slc="17">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -998,7 +1071,7 @@
       </article>
       <div class="gap"></div>
     </div>
-    <div class="cell mba" data-slc="16">
+    <div class="cell mba" data-slc="18">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1022,7 +1095,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="17">
+    <div class="cell mba" data-slc="19">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1046,7 +1119,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="18">
+    <div class="cell mba" data-slc="20">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1070,6 +1143,7 @@
     <div class="cell connector" data-slc="5"></div>
     <div class="cell connector" data-slc="6"></div>
     <div class="cell connector" data-slc="7"></div>
+
     <div class="cell connector" data-slc="8"></div>
     <div class="cell connector" data-slc="9"></div>
     <div class="cell connector" data-slc="10"></div>
@@ -1081,6 +1155,8 @@
     <div class="cell connector" data-slc="16"></div>
     <div class="cell connector" data-slc="17"></div>
     <div class="cell connector" data-slc="18"></div>
+    <div class="cell connector" data-slc="19"></div>
+    <div class="cell connector" data-slc="20"></div>
     <div class="cell lane open lba-head"><div class="lba-head-gap" aria-hidden="true"></div><div class="lba-head-label">Unconference</div></div>
     <div class="cell lba foot" data-slc="1" data-lane="unconference">
       <div class="gap">
@@ -1139,6 +1215,22 @@
           <div class="tile arrow-down"></div>
         </div>
       </div>
+      <article class="err" id="err-name-required">
+        <h2>Name Required</h2>
+        <dl class="props">
+          <div><dt>message</dt><dd>Name is required</dd></div>
+        </dl>
+      </article>
+    </div>
+    <div class="cell lba foot" data-slc="7" data-lane="unconference"></div>
+
+    <div class="cell lba foot" data-slc="8" data-lane="unconference">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+      </div>
       <article class="evt" id="evt-attendee-registered-jordan">
         <h2>Attendee Registered</h2>
         <dl class="props">
@@ -1148,7 +1240,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="7" data-lane="unconference">
+    <div class="cell lba foot" data-slc="9" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1166,7 +1258,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="8" data-lane="unconference">
+    <div class="cell lba foot" data-slc="10" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1184,7 +1276,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="9" data-lane="unconference">
+    <div class="cell lba foot" data-slc="11" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1202,8 +1294,8 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="10" data-lane="unconference"></div>
-    <div class="cell lba foot" data-slc="11" data-lane="unconference">
+    <div class="cell lba foot" data-slc="12" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="13" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1219,7 +1311,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="12" data-lane="unconference">
+    <div class="cell lba foot" data-slc="14" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1235,7 +1327,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="13" data-lane="unconference">
+    <div class="cell lba foot" data-slc="15" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1251,7 +1343,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="14" data-lane="unconference">
+    <div class="cell lba foot" data-slc="16" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1265,8 +1357,8 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="15" data-lane="unconference"></div>
-    <div class="cell lba foot" data-slc="16" data-lane="unconference">
+    <div class="cell lba foot" data-slc="17" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="18" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1285,7 +1377,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="17" data-lane="unconference">
+    <div class="cell lba foot" data-slc="19" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1304,7 +1396,640 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="18" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="20" data-lane="unconference"></div>
+    <div class="cell lane open">GWT</div>
+    <div class="cell gwt" data-slc="1">
+      <div class="timeline">
+        <article class="com">
+          <h2>Open Registration</h2>
+          <dl class="props">
+            <div><dt>title</dt><dd>Adaptech Unconference 2026</dd></div>
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Registration Opened</h2>
+          <dl class="props">
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>title</dt><dd>Adaptech Unconference 2026</dd></div>
+            <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="2">
+      <div class="timeline">
+        <article class="rmo">
+          <h2>Signup QR</h2>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Registration Opened</h2>
+          <dl class="props">
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>title</dt><dd>Adaptech Unconference 2026</dd></div>
+            <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Signup QR</h2>
+          <dl class="props">
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>title</dt><dd>Adaptech Unconference 2026</dd></div>
+            <div><dt>signupUrl</dt><dd>https://unconf.example/signup/tok-7f3a</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="3">
+      <div class="timeline">
+        <article class="com">
+          <h2>Register Attendee</h2>
+          <dl class="props">
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+            <div><dt>name</dt><dd>Pat Lee</dd></div>
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Attendee Registered</h2>
+          <dl class="props">
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>name</dt><dd>Pat Lee</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="4">
+      <div class="timeline">
+        <article class="rmo">
+          <h2>Signup Confirmation</h2>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Attendee Registered</h2>
+          <dl class="props">
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>name</dt><dd>Pat Lee</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Signup Confirmation</h2>
+          <dl class="props">
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+            <div><dt>name</dt><dd>Pat Lee</dd></div>
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="5"></div>
+    <div class="cell gwt" data-slc="6">
+      <div class="timeline">
+        <article class="com">
+          <h2>Register Attendee</h2>
+          <dl class="props">
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+            <div><dt>name</dt><dd></dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="err">
+          <h2>Name Required</h2>
+          <dl class="props">
+            <div><dt>message</dt><dd>Name is required</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="7"></div>
+    <div class="cell gwt" data-slc="8">
+      <div class="timeline">
+        <article class="com">
+          <h2>Register Attendee</h2>
+          <dl class="props">
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+            <div><dt>name</dt><dd>Jordan Ortiz</dd></div>
+            <div><dt>attendeeId</dt><dd>A-3</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Attendee Registered</h2>
+          <dl class="props">
+            <div><dt>attendeeId</dt><dd>A-3</dd></div>
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>name</dt><dd>Jordan Ortiz</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="com">
+          <h2>Register Attendee</h2>
+          <dl class="props">
+            <div><dt>eventId</dt><dd>E-1</dd></div>
+            <div><dt>signupToken</dt><dd>tok-7f3a</dd></div>
+            <div><dt>name</dt><dd>Jordan Ortiz</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="err">
+          <h2>Already Registered</h2>
+          <dl class="props">
+            <div><dt>name</dt><dd>Jordan Ortiz</dd></div>
+            <div><dt>message</dt><dd>Already registered</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="9"></div>
+    <div class="cell gwt" data-slc="10"></div>
+    <div class="cell gwt" data-slc="11"></div>
+    <div class="cell gwt" data-slc="12">
+      <div class="timeline">
+        <article class="rmo">
+          <h2>Topic Ballot</h2>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Attendee Registered</h2>
+          <dl class="props">
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+            <div><dt>name</dt><dd>Pat Lee</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Topic Ballot</h2>
+          <dl class="props">
+            <div><dt>lookup A-1</dt><dd>Pat Lee</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Attendee Registered</h2>
+          <dl class="props">
+            <div><dt>attendeeId</dt><dd>A-2</dd></div>
+            <div><dt>name</dt><dd>Riley Ng</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Topic Ballot</h2>
+          <dl class="props">
+            <div><dt>lookup A-1</dt><dd>Pat Lee</dd></div>
+            <div><dt>lookup A-2</dt><dd>Riley Ng</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Attendee Registered</h2>
+          <dl class="props">
+            <div><dt>attendeeId</dt><dd>A-3</dd></div>
+            <div><dt>name</dt><dd>Jordan Ortiz</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Topic Ballot</h2>
+          <dl class="props">
+            <div><dt>lookup A-1</dt><dd>Pat Lee</dd></div>
+            <div><dt>lookup A-2</dt><dd>Riley Ng</dd></div>
+            <div><dt>lookup A-3</dt><dd>Jordan Ortiz</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+            <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
+            <div><dt>kind</dt><dd>presentation</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Topic Ballot</h2>
+          <dl class="props">
+            <div><dt>lookup A-1</dt><dd>Pat Lee</dd></div>
+            <div><dt>lookup A-2</dt><dd>Riley Ng</dd></div>
+            <div><dt>lookup A-3</dt><dd>Jordan Ortiz</dd></div>
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · Pat Lee</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-2</dd></div>
+            <div><dt>attendeeId</dt><dd>A-2</dd></div>
+            <div><dt>title</dt><dd>Remote Facilitation</dd></div>
+            <div><dt>kind</dt><dd>fishBowl</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Topic Ballot</h2>
+          <dl class="props">
+            <div><dt>lookup A-1</dt><dd>Pat Lee</dd></div>
+            <div><dt>lookup A-2</dt><dd>Riley Ng</dd></div>
+            <div><dt>lookup A-3</dt><dd>Jordan Ortiz</dd></div>
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · Pat Lee</dd></div>
+            <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · Riley Ng</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-3</dd></div>
+            <div><dt>attendeeId</dt><dd>A-3</dd></div>
+            <div><dt>title</dt><dd>Lunch spots nearby</dd></div>
+            <div><dt>kind</dt><dd>suggestion</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Topic Ballot</h2>
+          <dl class="props">
+            <div><dt>lookup A-1</dt><dd>Pat Lee</dd></div>
+            <div><dt>lookup A-2</dt><dd>Riley Ng</dd></div>
+            <div><dt>lookup A-3</dt><dd>Jordan Ortiz</dd></div>
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · Pat Lee</dd></div>
+            <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · Riley Ng</dd></div>
+            <div><dt>T-3</dt><dd>Lunch spots nearby · suggestion · Jordan Ortiz</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="13"></div>
+    <div class="cell gwt" data-slc="14"></div>
+    <div class="cell gwt" data-slc="15"></div>
+    <div class="cell gwt" data-slc="16"></div>
+    <div class="cell gwt" data-slc="17">
+      <div class="timeline">
+        <article class="rmo">
+          <h2>Agenda Builder</h2>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+            <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
+            <div><dt>kind</dt><dd>presentation</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda Builder</h2>
+          <dl class="props">
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · 0</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-2</dd></div>
+            <div><dt>attendeeId</dt><dd>A-2</dd></div>
+            <div><dt>title</dt><dd>Remote Facilitation</dd></div>
+            <div><dt>kind</dt><dd>fishBowl</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda Builder</h2>
+          <dl class="props">
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · 0</dd></div>
+            <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · 0</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-3</dd></div>
+            <div><dt>attendeeId</dt><dd>A-3</dd></div>
+            <div><dt>title</dt><dd>Lunch spots nearby</dd></div>
+            <div><dt>kind</dt><dd>suggestion</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda Builder</h2>
+          <dl class="props">
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · 0</dd></div>
+            <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · 0</dd></div>
+            <div><dt>T-3</dt><dd>Lunch spots nearby · suggestion · 0</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Voted</h2>
+          <dl class="props">
+            <div><dt>voteId</dt><dd>V-1</dd></div>
+            <div><dt>topicId</dt><dd>T-2</dd></div>
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda Builder</h2>
+          <dl class="props">
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · 0</dd></div>
+            <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · 1</dd></div>
+            <div><dt>T-3</dt><dd>Lunch spots nearby · suggestion · 0</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Voted</h2>
+          <dl class="props">
+            <div><dt>voteId</dt><dd>V-2</dd></div>
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>attendeeId</dt><dd>A-2</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda Builder</h2>
+          <dl class="props">
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · 1</dd></div>
+            <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · 1</dd></div>
+            <div><dt>T-3</dt><dd>Lunch spots nearby · suggestion · 0</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Voted</h2>
+          <dl class="props">
+            <div><dt>voteId</dt><dd>V-3</dd></div>
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>attendeeId</dt><dd>A-3</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda Builder</h2>
+          <dl class="props">
+            <div><dt>T-1</dt><dd>Event Sourcing in Practice · presentation · 2</dd></div>
+            <div><dt>T-2</dt><dd>Remote Facilitation · fishBowl · 1</dd></div>
+            <div><dt>T-3</dt><dd>Lunch spots nearby · suggestion · 0</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="18">
+      <div class="timeline">
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>attendeeId</dt><dd>A-1</dd></div>
+            <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
+            <div><dt>kind</dt><dd>presentation</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Topic Suggested</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-2</dd></div>
+            <div><dt>attendeeId</dt><dd>A-2</dd></div>
+            <div><dt>title</dt><dd>Remote Facilitation</dd></div>
+            <div><dt>kind</dt><dd>fishBowl</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="com">
+          <h2>Schedule Session</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>slot</dt><dd>morning</dd></div>
+            <div><dt>room</dt><dd>Room A</dd></div>
+            <div><dt>sessionId</dt><dd>S-1</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Session Scheduled</h2>
+          <dl class="props">
+            <div><dt>sessionId</dt><dd>S-1</dd></div>
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>slot</dt><dd>morning</dd></div>
+            <div><dt>room</dt><dd>Room A</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="com">
+          <h2>Schedule Session</h2>
+          <dl class="props">
+            <div><dt>topicId</dt><dd>T-2</dd></div>
+            <div><dt>slot</dt><dd>afternoon</dd></div>
+            <div><dt>room</dt><dd>Room B</dd></div>
+            <div><dt>sessionId</dt><dd>S-2</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Session Scheduled</h2>
+          <dl class="props">
+            <div><dt>sessionId</dt><dd>S-2</dd></div>
+            <div><dt>topicId</dt><dd>T-2</dd></div>
+            <div><dt>slot</dt><dd>afternoon</dd></div>
+            <div><dt>room</dt><dd>Room B</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+    <div class="cell gwt" data-slc="19"></div>
+    <div class="cell gwt" data-slc="20">
+      <div class="timeline">
+        <article class="rmo">
+          <h2>Agenda</h2>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Session Scheduled</h2>
+          <dl class="props">
+            <div><dt>sessionId</dt><dd>S-1</dd></div>
+            <div><dt>topicId</dt><dd>T-1</dd></div>
+            <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
+            <div><dt>kind</dt><dd>presentation</dd></div>
+            <div><dt>slot</dt><dd>morning</dd></div>
+            <div><dt>room</dt><dd>Room A</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda</h2>
+          <dl class="props">
+            <div><dt>S-1</dt><dd>Event Sourcing in Practice · presentation · morning · Room A</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt">
+          <h2>Session Scheduled</h2>
+          <dl class="props">
+            <div><dt>sessionId</dt><dd>S-2</dd></div>
+            <div><dt>topicId</dt><dd>T-2</dd></div>
+            <div><dt>title</dt><dd>Remote Facilitation</dd></div>
+            <div><dt>kind</dt><dd>fishBowl</dd></div>
+            <div><dt>slot</dt><dd>afternoon</dd></div>
+            <div><dt>room</dt><dd>Room B</dd></div>
+          </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo">
+          <h2>Agenda</h2>
+          <dl class="props">
+            <div><dt>S-1</dt><dd>Event Sourcing in Practice · presentation · morning · Room A</dd></div>
+            <div><dt>S-2</dt><dd>Remote Facilitation · fishBowl · afternoon · Room B</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
   </div>
   </div>
 </main>
