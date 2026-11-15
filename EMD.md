@@ -20,7 +20,7 @@
 
 **Joins (RMO, matched by id, all EVTs in one SWL):**
 - RMO Signup QR (Unconference): EVT Registration Opened, by eventId
-- RMO Signup Confirmation (Unconference): EVT Attendee Registered, by attendeeId
+- RMO Registrations (Unconference): EVT Attendee Registered, by attendeeId
 - RMO Topic Ballot (Unconference): EVT Topic Suggested ⋈ EVT Attendee Registered, by attendeeId
 - RMO Agenda Builder (Unconference): EVT Topic Suggested ⋈ EVT Topic Voted, by topicId
 - RMO Agenda (Unconference): EVT Session Scheduled, by sessionId
@@ -34,9 +34,9 @@
 | **UBA: Pat (Attendee)** | | | SCR Signup Form | SCR Signup Confirmation | | | | | SCR Suggest Topic Form | | | SCR Topic Ballot | SCR Topic Ballot | | | | | | | SCR Agenda |
 | **UBA: Riley (Attendee)** | | | | | SCR Signup Form | | | | | SCR Suggest Topic Form | | | | SCR Topic Ballot | | | | | | SCR Agenda |
 | **UBA: Jordan (Attendee)** | | | | | | SCR Signup Form | SCR Signup Form | SCR Signup Form | | | SCR Suggest Topic Form | | | | SCR Topic Ballot | | | | | SCR Agenda |
-| **MBA** | COM Open Registration | RMO Signup QR ← MAP Signup Url | COM Register Attendee | RMO Signup Confirmation | COM Register Attendee | COM Register Attendee | | COM Register Attendee | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | RMO Topic Ballot | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Close Registration | RMO Agenda Builder | COM Schedule Session | COM Schedule Session | RMO Agenda |
+| **MBA** | COM Open Registration | RMO Signup QR ← MAP Signup Url | COM Register Attendee | RMO Registrations | COM Register Attendee | COM Register Attendee | | COM Register Attendee | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | RMO Topic Ballot | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Close Registration | RMO Agenda Builder | COM Schedule Session | COM Schedule Session | RMO Agenda |
 | **LBA: Unconference** | EVT Registration Opened | | EVT Attendee Registered | | EVT Attendee Registered | ERR Name Required | | EVT Attendee Registered | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Registration Closed | | EVT Session Scheduled | EVT Session Scheduled | |
-| **GWT** | Open Registration → Registration Opened | Signup QR → Registration Opened → Signup QR | Register Attendee → Attendee Registered | Signup Confirmation → Attendee Registered → Signup Confirmation | | Register Attendee → Name Required | | Register Attendee → Attendee Registered → Register Attendee → Already Registered | | | | Topic Ballot → (Attendee Registered → Topic Ballot lookup) ×3 → (Topic Suggested → Topic Ballot row) ×3 | | | | | Agenda Builder → (Topic Suggested → Agenda Builder) ×3 → (Topic Voted → Agenda Builder) ×3 | Topic Suggested ×2 → Schedule Session → Session Scheduled → Schedule Session → Session Scheduled | | Agenda → (Session Scheduled → Agenda) ×2 |
+| **GWT** | Open Registration → Registration Opened | Signup QR → Registration Opened → Signup QR | Register Attendee → Attendee Registered | Registrations → Attendee Registered → Registrations | | Register Attendee → Name Required | | Register Attendee → Attendee Registered → Register Attendee → Already Registered | | | | Topic Ballot → (Attendee Registered → Topic Ballot lookup) ×3 → (Topic Suggested → Topic Ballot row) ×3 | | | | | Agenda Builder → (Topic Suggested → Agenda Builder) ×3 → (Topic Voted → Agenda Builder) ×3 | Topic Suggested ×2 → Schedule Session → Session Scheduled → Schedule Session → Session Scheduled | | Agenda → (Session Scheduled → Agenda) ×2 |
 
 **Slice types:**
 - COM slices: SLC1, SLC3, SLC5, SLC6, SLC8, SLC9, SLC10, SLC11, SLC13, SLC14, SLC15, SLC16, SLC18, SLC19
@@ -46,7 +46,7 @@
 **Arrows between SLCs:**
 - ERR Name Required (SLC6) → SCR Signup Form (SLC7)
 - EVT Registration Opened (SLC1) → MAP Signup Url → RMO Signup QR (SLC2)
-- EVT Attendee Registered (SLC3) → RMO Signup Confirmation (SLC4)
+- EVT Attendee Registered (SLC3) → RMO Registrations (SLC4)
 - EVT Attendee Registered (SLC3) → RMO Topic Ballot (SLC12)
 - EVT Attendee Registered (SLC5) → RMO Topic Ballot (SLC12)
 - EVT Attendee Registered (SLC8) → RMO Topic Ballot (SLC12)
@@ -110,16 +110,16 @@
   - EVT Attendee Registered (Unconference): attendeeId = A-1, eventId = E-1, name = Pat Lee
 
 **SLC4 (RMO slice)**
-- RMO Signup Confirmation (Unconference): attendeeId = A-1, name = Pat Lee, eventId = E-1
+- RMO Registrations (Unconference): attendeeId = A-1, name = Pat Lee, eventId = E-1
 - SCR Signup Confirmation (Pat):
   - heading You're signed up
   - column
     - label attendeeId = A-1
     - label name = Pat Lee
-- GWT timeline (RMO Signup Confirmation):
-  - RMO Signup Confirmation (Unconference): (empty)
+- GWT timeline (RMO Registrations):
+  - RMO Registrations (Unconference): (empty)
   - EVT Attendee Registered (SLC3): attendeeId = A-1, eventId = E-1, name = Pat Lee
-  - RMO Signup Confirmation (Unconference): attendeeId = A-1, name = Pat Lee, eventId = E-1
+  - RMO Registrations (Unconference): attendeeId = A-1, name = Pat Lee, eventId = E-1
 
 **SLC5 (COM slice)**
 - SCR Signup Form (Riley):
@@ -171,7 +171,7 @@
   - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = Jordan Ortiz, attendeeId = A-3
   - EVT Attendee Registered (Unconference): attendeeId = A-3, eventId = E-1, name = Jordan Ortiz
   - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = Jordan Ortiz
-  - ERR Already Registered (Unconference), EVT Attendee Registered already exists for name = Jordan Ortiz: message = "Already registered"
+  - ERR Already Registered (Unconference), EVT Attendee Registered already exists for name = Jordan Ortiz: name = Jordan Ortiz, message = "Already registered"
 
 **WFL3 Suggest a topic (SLC9–SLC11)**
 
