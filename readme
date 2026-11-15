@@ -1,3 +1,4 @@
 ## this project is a mobile web app for organizing an unconference
 
 The requirements and development status are kept in [EMD.md](EMD.md).
+The board is [unconference-organizer.emd.html](unconference-organizer.emd.html) — open it in a browser (uses `../../diagram/diagram.css`).
