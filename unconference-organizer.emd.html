@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>Unconference organizer</title>
-  <link rel="stylesheet" href="../../diagram/diagram.css?v=rmocaptions1">
+  <link rel="stylesheet" href="../../diagram/diagram.css?v=combtn1">
 </head>
 <body>
-<main class="emd" style="--slices: 20" data-joins="evt-registration-opened:rmo-signup-qr,evt-attendee-registered-pat:rmo-registrations,evt-attendee-registered-pat:rmo-topic-ballot,evt-attendee-registered-riley:rmo-topic-ballot,evt-attendee-registered-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-topic-ballot,evt-topic-suggested-riley:rmo-topic-ballot,evt-topic-suggested-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-agenda-builder,evt-topic-suggested-riley:rmo-agenda-builder,evt-topic-suggested-jordan:rmo-agenda-builder,evt-topic-voted-pat:rmo-agenda-builder,evt-topic-voted-riley:rmo-agenda-builder,evt-topic-voted-jordan:rmo-agenda-builder,evt-session-scheduled-1:rmo-agenda,evt-session-scheduled-2:rmo-agenda,err-name-required:scr-signup-form-jordan-error">
+<main class="emd" style="--slices: 20" data-joins="evt-registration-opened:rmo-signup-qr,evt-attendee-registered-pat:rmo-registrations,evt-attendee-registered-pat:rmo-topic-ballot,evt-attendee-registered-riley:rmo-topic-ballot,evt-attendee-registered-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-topic-ballot,evt-topic-suggested-riley:rmo-topic-ballot,evt-topic-suggested-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-agenda-builder,evt-topic-suggested-riley:rmo-agenda-builder,evt-topic-suggested-jordan:rmo-agenda-builder,evt-topic-voted-pat:rmo-agenda-builder,evt-topic-voted-riley:rmo-agenda-builder,evt-topic-voted-jordan:rmo-agenda-builder,evt-topic-suggested-pat:rmo-agenda,evt-topic-suggested-riley:rmo-agenda,evt-topic-suggested-jordan:rmo-agenda,evt-session-scheduled-1:rmo-agenda,evt-session-scheduled-2:rmo-agenda,err-name-required:scr-signup-form-jordan-error">
   <div class="sheet">
   <div class="board">
     <div class="cell lane emd-corner"></div>
@@ -25,7 +25,7 @@
           <div class="col">
             <p class="heading">Open Registration</p>
             <label class="text">title <input class="com-data" data-prop="title" value="Adaptech Unconference 2026" readonly></label>
-            <div class="row end"><button type="button">Open</button></div>
+            <div class="row end"><button type="button" class="com-data">Open</button></div>
           </div>
         </div>
       </article>
@@ -75,7 +75,7 @@
             <p class="heading">Close Registration</p>
             <p class="label">title <span data-prop="title">Adaptech Unconference 2026</span></p>
             <p class="label">attendees <span data-prop="attendees">3</span></p>
-            <div class="row end"><button type="button">Close</button></div>
+            <div class="row end"><button type="button" class="com-data">Close</button></div>
           </div>
         </div>
       </article>
@@ -118,13 +118,13 @@
             <fieldset class="group"><legend>Topic</legend>
               <div class="row">
                 <p class="label">topicId <span class="com-data" data-prop="topicId">T-1</span></p>
-                <p class="label">title <span class="com-data" data-prop="title">Event Sourcing in Practice</span></p>
-                <p class="label">kind <span class="com-data" data-prop="kind">presentation</span></p>
+                <p class="label">title <span data-prop="title">Event Sourcing in Practice</span></p>
+                <p class="label">kind <span data-prop="kind">presentation</span></p>
               </div>
             </fieldset>
             <label class="text">slot <input class="com-data" data-prop="slot" value="morning" readonly></label>
             <label class="text">room <input class="com-data" data-prop="room" value="Room A" readonly></label>
-            <div class="row end"><button type="button">Schedule</button></div>
+            <div class="row end"><button type="button" class="com-data">Schedule</button></div>
           </div>
         </div>
       </article>
@@ -143,13 +143,13 @@
             <fieldset class="group"><legend>Topic</legend>
               <div class="row">
                 <p class="label">topicId <span class="com-data" data-prop="topicId">T-2</span></p>
-                <p class="label">title <span class="com-data" data-prop="title">Remote Facilitation</span></p>
-                <p class="label">kind <span class="com-data" data-prop="kind">fishBowl</span></p>
+                <p class="label">title <span data-prop="title">Remote Facilitation</span></p>
+                <p class="label">kind <span data-prop="kind">fishBowl</span></p>
               </div>
             </fieldset>
             <label class="text">slot <input class="com-data" data-prop="slot" value="afternoon" readonly></label>
             <label class="text">room <input class="com-data" data-prop="room" value="Room B" readonly></label>
-            <div class="row end"><button type="button">Schedule</button></div>
+            <div class="row end"><button type="button" class="com-data">Schedule</button></div>
           </div>
         </div>
       </article>
@@ -205,7 +205,7 @@
             <p class="heading">Sign Up</p>
             <p class="label">title <span data-prop="title">Adaptech Unconference 2026</span></p>
             <label class="text">name <input class="com-data" data-prop="name" value="Pat Lee" readonly></label>
-            <div class="row end"><button type="button">Sign up</button></div>
+            <div class="row end"><button type="button" class="com-data">Sign up</button></div>
           </div>
         </div>
       </article>
@@ -245,7 +245,7 @@
             <p class="heading">Suggest a Topic</p>
             <label class="text">title <input class="com-data" data-prop="title" value="Event Sourcing in Practice" readonly></label>
             <label class="dropdown">kind <select class="com-data" data-prop="kind" disabled><option>presentation</option></select></label>
-            <div class="row end"><button type="button">Suggest</button></div>
+            <div class="row end"><button type="button" class="com-data">Suggest</button></div>
           </div>
         </div>
       </article>
@@ -294,7 +294,7 @@
                   <td class="com-data" data-prop="topicId">T-2</td>
                   <td data-prop="title">Remote Facilitation</td>
                   <td data-prop="kind">fishBowl</td>
-                  <td><button type="button">Vote</button></td>
+                  <td><button type="button" class="com-data">Vote</button></td>
                 </tr>
               </tbody>
             </table>
@@ -397,7 +397,7 @@
             <p class="heading">Sign Up</p>
             <p class="label">title <span data-prop="title">Adaptech Unconference 2026</span></p>
             <label class="text">name <input class="com-data" data-prop="name" value="Riley Ng" readonly></label>
-            <div class="row end"><button type="button">Sign up</button></div>
+            <div class="row end"><button type="button" class="com-data">Sign up</button></div>
           </div>
         </div>
       </article>
@@ -425,7 +425,7 @@
             <p class="heading">Suggest a Topic</p>
             <label class="text">title <input class="com-data" data-prop="title" value="Remote Facilitation" readonly></label>
             <label class="dropdown">kind <select class="com-data" data-prop="kind" disabled><option>fishBowl</option></select></label>
-            <div class="row end"><button type="button">Suggest</button></div>
+            <div class="row end"><button type="button" class="com-data">Suggest</button></div>
           </div>
         </div>
       </article>
@@ -463,7 +463,7 @@
                   <td class="com-data" data-prop="topicId">T-1</td>
                   <td data-prop="title">Event Sourcing in Practice</td>
                   <td data-prop="kind">presentation</td>
-                  <td><button type="button">Vote</button></td>
+                  <td><button type="button" class="com-data">Vote</button></td>
                 </tr>
               </tbody>
             </table>
@@ -572,7 +572,7 @@
             <p class="heading">Sign Up</p>
             <p class="label">title <span data-prop="title">Adaptech Unconference 2026</span></p>
             <label class="text">name <input class="com-data" data-prop="name" value="" readonly></label>
-            <div class="row end"><button type="button">Sign up</button></div>
+            <div class="row end"><button type="button" class="com-data">Sign up</button></div>
           </div>
         </div>
       </article>
@@ -609,7 +609,7 @@
             <p class="heading">Sign Up</p>
             <p class="label">title <span data-prop="title">Adaptech Unconference 2026</span></p>
             <label class="text">name <input class="com-data" data-prop="name" value="Jordan Ortiz" readonly></label>
-            <div class="row end"><button type="button">Sign up</button></div>
+            <div class="row end"><button type="button" class="com-data">Sign up</button></div>
           </div>
         </div>
       </article>
@@ -641,7 +641,7 @@
             <p class="heading">Suggest a Topic</p>
             <label class="text">title <input class="com-data" data-prop="title" value="Lunch spots nearby" readonly></label>
             <label class="dropdown">kind <select class="com-data" data-prop="kind" disabled><option>suggestion</option></select></label>
-            <div class="row end"><button type="button">Suggest</button></div>
+            <div class="row end"><button type="button" class="com-data">Suggest</button></div>
           </div>
         </div>
       </article>
@@ -685,7 +685,7 @@
                   <td class="com-data" data-prop="topicId">T-1</td>
                   <td data-prop="title">Event Sourcing in Practice</td>
                   <td data-prop="kind">presentation</td>
-                  <td><button type="button">Vote</button></td>
+                  <td><button type="button" class="com-data">Vote</button></td>
                 </tr>
               </tbody>
             </table>
@@ -1106,8 +1106,6 @@
         <h2>Schedule Session</h2>
         <dl class="props">
           <div><dt>topicId</dt><dd>T-1</dd></div>
-          <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
-          <div><dt>kind</dt><dd>presentation</dd></div>
           <div><dt>slot</dt><dd>morning</dd></div>
           <div><dt>room</dt><dd>Room A</dd></div>
           <div><dt>sessionId</dt><dd>S-1</dd></div>
@@ -1130,8 +1128,6 @@
         <h2>Schedule Session</h2>
         <dl class="props">
           <div><dt>topicId</dt><dd>T-2</dd></div>
-          <div><dt>title</dt><dd>Remote Facilitation</dd></div>
-          <div><dt>kind</dt><dd>fishBowl</dd></div>
           <div><dt>slot</dt><dd>afternoon</dd></div>
           <div><dt>room</dt><dd>Room B</dd></div>
           <div><dt>sessionId</dt><dd>S-2</dd></div>
@@ -1153,10 +1149,20 @@
         <h2>Agenda</h2>
         <div class="props">
         <table class="collection">
-          <thead><tr><th>sessionId</th><th>title</th><th>kind</th><th>slot</th><th>room</th></tr></thead>
+          <caption>Agenda</caption>
+          <thead><tr><th>sessionId</th><th>topicId</th><th>title</th><th>kind</th><th>slot</th><th>room</th></tr></thead>
           <tbody>
-          <tr><td data-prop="sessionId">S-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td><td data-prop="slot">morning</td><td data-prop="room">Room A</td></tr>
-          <tr><td data-prop="sessionId">S-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td><td data-prop="slot">afternoon</td><td data-prop="room">Room B</td></tr>
+          <tr><td data-prop="sessionId">S-1</td><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td><td data-prop="slot">morning</td><td data-prop="room">Room A</td></tr>
+          <tr><td data-prop="sessionId">S-2</td><td data-prop="topicId">T-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td><td data-prop="slot">afternoon</td><td data-prop="room">Room B</td></tr>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
+          <thead><tr><th>topicId</th><th>title</th><th>kind</th></tr></thead>
+          <tbody>
+          <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
+          <tr><td data-prop="topicId">T-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td></tr>
+          <tr><td data-prop="topicId">T-3</td><td data-prop="title">Lunch spots nearby</td><td data-prop="kind">suggestion</td></tr>
           </tbody>
         </table>
       </div>
@@ -1400,8 +1406,6 @@
         <dl class="props">
           <div><dt>sessionId</dt><dd>S-1</dd></div>
           <div><dt>topicId</dt><dd>T-1</dd></div>
-          <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
-          <div><dt>kind</dt><dd>presentation</dd></div>
           <div><dt>slot</dt><dd>morning</dd></div>
           <div><dt>room</dt><dd>Room A</dd></div>
         </dl>
@@ -1419,8 +1423,6 @@
         <dl class="props">
           <div><dt>sessionId</dt><dd>S-2</dd></div>
           <div><dt>topicId</dt><dd>T-2</dd></div>
-          <div><dt>title</dt><dd>Remote Facilitation</dd></div>
-          <div><dt>kind</dt><dd>fishBowl</dd></div>
           <div><dt>slot</dt><dd>afternoon</dd></div>
           <div><dt>room</dt><dd>Room B</dd></div>
         </dl>
@@ -1999,8 +2001,6 @@
         <article class="com"><h2>Schedule Session</h2>
 <dl class="props">
           <div><dt>topicId</dt><dd>T-1</dd></div>
-          <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
-          <div><dt>kind</dt><dd>presentation</dd></div>
           <div><dt>slot</dt><dd>morning</dd></div>
           <div><dt>room</dt><dd>Room A</dd></div>
           <div><dt>sessionId</dt><dd>S-1</dd></div>
@@ -2014,8 +2014,6 @@
 <dl class="props">
           <div><dt>sessionId</dt><dd>S-1</dd></div>
           <div><dt>topicId</dt><dd>T-1</dd></div>
-          <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
-          <div><dt>kind</dt><dd>presentation</dd></div>
           <div><dt>slot</dt><dd>morning</dd></div>
           <div><dt>room</dt><dd>Room A</dd></div>
         </dl>
@@ -2027,8 +2025,6 @@
         <article class="com"><h2>Schedule Session</h2>
 <dl class="props">
           <div><dt>topicId</dt><dd>T-2</dd></div>
-          <div><dt>title</dt><dd>Remote Facilitation</dd></div>
-          <div><dt>kind</dt><dd>fishBowl</dd></div>
           <div><dt>slot</dt><dd>afternoon</dd></div>
           <div><dt>room</dt><dd>Room B</dd></div>
           <div><dt>sessionId</dt><dd>S-2</dd></div>
@@ -2042,8 +2038,6 @@
 <dl class="props">
           <div><dt>sessionId</dt><dd>S-2</dd></div>
           <div><dt>topicId</dt><dd>T-2</dd></div>
-          <div><dt>title</dt><dd>Remote Facilitation</dd></div>
-          <div><dt>kind</dt><dd>fishBowl</dd></div>
           <div><dt>slot</dt><dd>afternoon</dd></div>
           <div><dt>room</dt><dd>Room B</dd></div>
         </dl>
@@ -2051,9 +2045,94 @@
       </div>
     </div>
     <div class="cell gwt" data-slc="19"></div>
-    <div class="cell gwt" data-slc="20">
+        <div class="cell gwt" data-slc="20">
       <div class="timeline">
-        <article class="rmo"><h2>Agenda</h2></article>
+        <article class="rmo"><h2>Agenda</h2>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt"><h2>Topic Suggested</h2>
+<dl class="props">
+          <div><dt>topicId</dt><dd>T-1</dd></div>
+          <div><dt>eventId</dt><dd>E-1</dd></div>
+          <div><dt>attendeeId</dt><dd>A-1</dd></div>
+          <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
+          <div><dt>kind</dt><dd>presentation</dd></div>
+        </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo"><h2>Agenda</h2>
+<div class="props">
+        <table class="collection">
+          <thead><tr><th>topicId</th><th>title</th><th>kind</th></tr></thead>
+          <tbody>
+          <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
+          </tbody>
+        </table>
+      </div>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt"><h2>Topic Suggested</h2>
+<dl class="props">
+          <div><dt>topicId</dt><dd>T-2</dd></div>
+          <div><dt>eventId</dt><dd>E-1</dd></div>
+          <div><dt>attendeeId</dt><dd>A-2</dd></div>
+          <div><dt>title</dt><dd>Remote Facilitation</dd></div>
+          <div><dt>kind</dt><dd>fishBowl</dd></div>
+        </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo"><h2>Agenda</h2>
+<div class="props">
+        <table class="collection">
+          <thead><tr><th>topicId</th><th>title</th><th>kind</th></tr></thead>
+          <tbody>
+          <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
+          <tr><td data-prop="topicId">T-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td></tr>
+          </tbody>
+        </table>
+      </div>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="evt"><h2>Topic Suggested</h2>
+<dl class="props">
+          <div><dt>topicId</dt><dd>T-3</dd></div>
+          <div><dt>eventId</dt><dd>E-1</dd></div>
+          <div><dt>attendeeId</dt><dd>A-3</dd></div>
+          <div><dt>title</dt><dd>Lunch spots nearby</dd></div>
+          <div><dt>kind</dt><dd>suggestion</dd></div>
+        </dl>
+        </article>
+        <div class="arr v">
+          <div class="shaft"></div>
+          <div class="tile arrow-down"></div>
+        </div>
+        <article class="rmo"><h2>Agenda</h2>
+<div class="props">
+        <table class="collection">
+          <thead><tr><th>topicId</th><th>title</th><th>kind</th></tr></thead>
+          <tbody>
+          <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
+          <tr><td data-prop="topicId">T-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td></tr>
+          <tr><td data-prop="topicId">T-3</td><td data-prop="title">Lunch spots nearby</td><td data-prop="kind">suggestion</td></tr>
+          </tbody>
+        </table>
+      </div>
+        </article>
         <div class="arr v">
           <div class="shaft"></div>
           <div class="tile arrow-down"></div>
@@ -2062,8 +2141,6 @@
 <dl class="props">
           <div><dt>sessionId</dt><dd>S-1</dd></div>
           <div><dt>topicId</dt><dd>T-1</dd></div>
-          <div><dt>title</dt><dd>Event Sourcing in Practice</dd></div>
-          <div><dt>kind</dt><dd>presentation</dd></div>
           <div><dt>slot</dt><dd>morning</dd></div>
           <div><dt>room</dt><dd>Room A</dd></div>
         </dl>
@@ -2075,9 +2152,19 @@
         <article class="rmo"><h2>Agenda</h2>
 <div class="props">
         <table class="collection">
-          <thead><tr><th>sessionId</th><th>title</th><th>kind</th><th>slot</th><th>room</th></tr></thead>
+          <caption>Agenda</caption>
+          <thead><tr><th>sessionId</th><th>topicId</th><th>title</th><th>kind</th><th>slot</th><th>room</th></tr></thead>
           <tbody>
-          <tr><td data-prop="sessionId">S-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td><td data-prop="slot">morning</td><td data-prop="room">Room A</td></tr>
+          <tr><td data-prop="sessionId">S-1</td><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td><td data-prop="slot">morning</td><td data-prop="room">Room A</td></tr>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
+          <thead><tr><th>topicId</th><th>title</th><th>kind</th></tr></thead>
+          <tbody>
+          <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
+          <tr><td data-prop="topicId">T-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td></tr>
+          <tr><td data-prop="topicId">T-3</td><td data-prop="title">Lunch spots nearby</td><td data-prop="kind">suggestion</td></tr>
           </tbody>
         </table>
       </div>
@@ -2090,8 +2177,6 @@
 <dl class="props">
           <div><dt>sessionId</dt><dd>S-2</dd></div>
           <div><dt>topicId</dt><dd>T-2</dd></div>
-          <div><dt>title</dt><dd>Remote Facilitation</dd></div>
-          <div><dt>kind</dt><dd>fishBowl</dd></div>
           <div><dt>slot</dt><dd>afternoon</dd></div>
           <div><dt>room</dt><dd>Room B</dd></div>
         </dl>
@@ -2103,10 +2188,20 @@
         <article class="rmo"><h2>Agenda</h2>
 <div class="props">
         <table class="collection">
-          <thead><tr><th>sessionId</th><th>title</th><th>kind</th><th>slot</th><th>room</th></tr></thead>
+          <caption>Agenda</caption>
+          <thead><tr><th>sessionId</th><th>topicId</th><th>title</th><th>kind</th><th>slot</th><th>room</th></tr></thead>
           <tbody>
-          <tr><td data-prop="sessionId">S-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td><td data-prop="slot">morning</td><td data-prop="room">Room A</td></tr>
-          <tr><td data-prop="sessionId">S-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td><td data-prop="slot">afternoon</td><td data-prop="room">Room B</td></tr>
+          <tr><td data-prop="sessionId">S-1</td><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td><td data-prop="slot">morning</td><td data-prop="room">Room A</td></tr>
+          <tr><td data-prop="sessionId">S-2</td><td data-prop="topicId">T-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td><td data-prop="slot">afternoon</td><td data-prop="room">Room B</td></tr>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
+          <thead><tr><th>topicId</th><th>title</th><th>kind</th></tr></thead>
+          <tbody>
+          <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
+          <tr><td data-prop="topicId">T-2</td><td data-prop="title">Remote Facilitation</td><td data-prop="kind">fishBowl</td></tr>
+          <tr><td data-prop="topicId">T-3</td><td data-prop="title">Lunch spots nearby</td><td data-prop="kind">suggestion</td></tr>
           </tbody>
         </table>
       </div>
@@ -2116,7 +2211,7 @@
   </div>
   </div>
 </main>
-<script src="../../diagram/connectors.js?v=rmocaptions1"></script>
-<script src="../../diagram/settings.js?v=rmocaptions1"></script>
+<script src="../../diagram/connectors.js?v=combtn1"></script>
+<script src="../../diagram/settings.js?v=combtn1"></script>
 </body>
 </html>

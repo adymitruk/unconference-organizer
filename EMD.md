@@ -26,7 +26,7 @@
   - from: SCR Close Registration
   - to: EVT Registration Closed
 - COM Schedule Session
-  - properties: topicId, title, kind, slot, room, sessionId
+  - properties: topicId, slot, room, sessionId
   - from: SCR Agenda Builder
   - to: EVT Session Scheduled
 
@@ -52,7 +52,7 @@
   - from: COM Close Registration
   - to: none
 - EVT Session Scheduled (Unconference)
-  - properties: sessionId, topicId, title, kind, slot, room
+  - properties: sessionId, topicId, slot, room
   - from: COM Schedule Session
   - to: RMO Agenda
 
@@ -74,8 +74,8 @@
   - from: EVT Topic Suggested, EVT Topic Voted (join by topicId)
   - to: SCR Agenda Builder
 - RMO Agenda (Unconference)
-  - collections: [sessionId, title, kind, slot, room]
-  - from: EVT Session Scheduled (by sessionId)
+  - collections: Agenda [sessionId, topicId, title, kind, slot, room]; lookups [topicId, title, kind]
+  - from: EVT Topic Suggested (lookups by topicId), EVT Session Scheduled (by sessionId; join lookups for title, kind)
   - to: SCR Agenda
 
 **WFLs:**
@@ -104,7 +104,7 @@
 | **UBA: Jordan (Attendee)** | | | | | | SCR Signup Form | SCR Signup Form | SCR Signup Form | | | SCR Suggest Topic Form | | | | SCR Topic Ballot | | | | | SCR Agenda |
 | **MBA** | COM Open Registration | RMO Signup QR ← MAP Signup Url | COM Register Attendee | RMO Registrations | COM Register Attendee | COM Register Attendee | | COM Register Attendee | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | RMO Topic Ballot | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Close Registration | RMO Agenda Builder | COM Schedule Session | COM Schedule Session | RMO Agenda |
 | **LBA: Unconference** | EVT Registration Opened | | EVT Attendee Registered | | EVT Attendee Registered | ERR Name Required | | EVT Attendee Registered | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Registration Closed | | EVT Session Scheduled | EVT Session Scheduled | |
-| **GWT** | Open Registration → Registration Opened | Signup QR → Registration Opened → Signup QR | Register Attendee → Attendee Registered | Registrations → Attendee Registered → Registrations | | Register Attendee → Name Required | | Register Attendee → Attendee Registered → Register Attendee → Already Registered | | | | Topic Ballot → (Attendee Registered → Topic Ballot lookup) ×3 → (Topic Suggested → Topic Ballot row) ×3 | | | | | Agenda Builder → (Topic Suggested → Agenda Builder) ×3 → (Topic Voted → Agenda Builder) ×3 | Topic Suggested ×2 → Schedule Session → Session Scheduled → Schedule Session → Session Scheduled | | Agenda → (Session Scheduled → Agenda) ×2 |
+| **GWT** | Open Registration → Registration Opened | Signup QR → Registration Opened → Signup QR | Register Attendee → Attendee Registered | Registrations → Attendee Registered → Registrations | | Register Attendee → Name Required | | Register Attendee → Attendee Registered → Register Attendee → Already Registered | | | | Topic Ballot → (Attendee Registered → Topic Ballot lookup) ×3 → (Topic Suggested → Topic Ballot row) ×3 | | | | | Agenda Builder → (Topic Suggested → Agenda Builder) ×3 → (Topic Voted → Agenda Builder) ×3 | Topic Suggested ×2 → Schedule Session → Session Scheduled → Schedule Session → Session Scheduled | | Agenda → (Topic Suggested → lookups) ×3 → (Session Scheduled → Agenda row) ×2 |
 
 **Slice types:**
 - COM slices: SLC1, SLC3, SLC5, SLC6, SLC8, SLC9, SLC10, SLC11, SLC13, SLC14, SLC15, SLC16, SLC18, SLC19
@@ -127,6 +127,9 @@
 - EVT Topic Voted (SLC13) → RMO Agenda Builder (SLC17)
 - EVT Topic Voted (SLC14) → RMO Agenda Builder (SLC17)
 - EVT Topic Voted (SLC15) → RMO Agenda Builder (SLC17)
+- EVT Topic Suggested (SLC9) → RMO Agenda (SLC20)
+- EVT Topic Suggested (SLC10) → RMO Agenda (SLC20)
+- EVT Topic Suggested (SLC11) → RMO Agenda (SLC20)
 - EVT Session Scheduled (SLC18) → RMO Agenda (SLC20)
 - EVT Session Scheduled (SLC19) → RMO Agenda (SLC20)
 
@@ -381,52 +384,63 @@
 **SLC18 (COM slice)**
 - SCR Agenda Builder (Alex):
   - heading Schedule Session
-  - group Topic (read only)
+  - group Topic (read only; title/kind from prior SCR via session — not COM fields)
     - row: label topicId = T-1 | label title = Event Sourcing in Practice | label kind = presentation
   - column
     - text box slot = morning
     - text box room = Room A
   - row, right-aligned
     - button Schedule → COM Schedule Session
-- COM Schedule Session: topicId = T-1, title = Event Sourcing in Practice, kind = presentation, slot = morning, room = Room A, sessionId = S-1
-- EVT Session Scheduled (Unconference): sessionId = S-1, topicId = T-1, title = Event Sourcing in Practice, kind = presentation, slot = morning, room = Room A
+- COM Schedule Session: topicId = T-1, slot = morning, room = Room A, sessionId = S-1
+- EVT Session Scheduled (Unconference): sessionId = S-1, topicId = T-1, slot = morning, room = Room A
 - GWT timeline (two GWTs for COM Schedule Session; next When's Given = previous Given EVTs + Then EVTs):
   - EVT Topic Suggested (SLC9): topicId = T-1, eventId = E-1, attendeeId = A-1, title = Event Sourcing in Practice, kind = presentation
   - EVT Topic Suggested (SLC10): topicId = T-2, eventId = E-1, attendeeId = A-2, title = Remote Facilitation, kind = fishBowl
-  - COM Schedule Session: topicId = T-1, title = Event Sourcing in Practice, kind = presentation, slot = morning, room = Room A, sessionId = S-1
-  - EVT Session Scheduled (Unconference): sessionId = S-1, topicId = T-1, title = Event Sourcing in Practice, kind = presentation, slot = morning, room = Room A
-  - COM Schedule Session: topicId = T-2, title = Remote Facilitation, kind = fishBowl, slot = afternoon, room = Room B, sessionId = S-2
-  - EVT Session Scheduled (Unconference): sessionId = S-2, topicId = T-2, title = Remote Facilitation, kind = fishBowl, slot = afternoon, room = Room B
+  - COM Schedule Session: topicId = T-1, slot = morning, room = Room A, sessionId = S-1
+  - EVT Session Scheduled (Unconference): sessionId = S-1, topicId = T-1, slot = morning, room = Room A
+  - COM Schedule Session: topicId = T-2, slot = afternoon, room = Room B, sessionId = S-2
+  - EVT Session Scheduled (Unconference): sessionId = S-2, topicId = T-2, slot = afternoon, room = Room B
 
 **SLC19 (COM slice)**
 - SCR Agenda Builder (Alex):
   - heading Schedule Session
-  - group Topic (read only)
+  - group Topic (read only; title/kind from prior SCR via session — not COM fields)
     - row: label topicId = T-2 | label title = Remote Facilitation | label kind = fishBowl
   - column
     - text box slot = afternoon
     - text box room = Room B
   - row, right-aligned
     - button Schedule → COM Schedule Session
-- COM Schedule Session: topicId = T-2, title = Remote Facilitation, kind = fishBowl, slot = afternoon, room = Room B, sessionId = S-2
-- EVT Session Scheduled (Unconference): sessionId = S-2, topicId = T-2, title = Remote Facilitation, kind = fishBowl, slot = afternoon, room = Room B
+- COM Schedule Session: topicId = T-2, slot = afternoon, room = Room B, sessionId = S-2
+- EVT Session Scheduled (Unconference): sessionId = S-2, topicId = T-2, slot = afternoon, room = Room B
 
 **SLC20 (RMO slice)**
-- RMO Agenda (Unconference), one row per session: sessionId | title | kind | slot | room
-  - S-1 | Event Sourcing in Practice | presentation | morning | Room A
-  - S-2 | Remote Facilitation | fishBowl | afternoon | Room B
+- RMO Agenda (Unconference):
+  - lookups (every suggested topic, including those never scheduled): topicId | title | kind
+    - T-1 | Event Sourcing in Practice | presentation
+    - T-2 | Remote Facilitation | fishBowl
+    - T-3 | Lunch spots nearby | suggestion
+  - Agenda rows (scheduled sessions; title/kind from lookups by topicId): sessionId | topicId | title | kind | slot | room
+    - S-1 | T-1 | Event Sourcing in Practice | presentation | morning | Room A
+    - S-2 | T-2 | Remote Facilitation | fishBowl | afternoon | Room B
 - SCR Agenda (Alex):
   - heading Agenda
-  - table, one row per row of RMO Agenda
+  - table, one row per Agenda row of RMO Agenda
     - columns: slot | room | title | kind
     - row: morning | Room A | Event Sourcing in Practice | presentation
     - row: afternoon | Room B | Remote Facilitation | fishBowl
 - SCR Agenda (Pat): same as Alex
 - SCR Agenda (Riley): same as Alex
 - SCR Agenda (Jordan): same as Alex
-- GWT timeline (RMO Agenda):
+- GWT timeline (RMO Agenda; Topic Suggested fills lookups — including topics with no votes; Session Scheduled adds Agenda rows joined by topicId):
   - RMO Agenda (Unconference): (empty)
-  - EVT Session Scheduled (SLC18): sessionId = S-1, topicId = T-1, title = Event Sourcing in Practice, kind = presentation, slot = morning, room = Room A
-  - RMO Agenda (Unconference): S-1 | Event Sourcing in Practice | presentation | morning | Room A
-  - EVT Session Scheduled (SLC19): sessionId = S-2, topicId = T-2, title = Remote Facilitation, kind = fishBowl, slot = afternoon, room = Room B
-  - RMO Agenda (Unconference): S-1 | Event Sourcing in Practice | presentation | morning | Room A; S-2 | Remote Facilitation | fishBowl | afternoon | Room B
+  - EVT Topic Suggested (SLC9): topicId = T-1, eventId = E-1, attendeeId = A-1, title = Event Sourcing in Practice, kind = presentation
+  - RMO Agenda (Unconference): lookup T-1 | Event Sourcing in Practice | presentation
+  - EVT Topic Suggested (SLC10): topicId = T-2, eventId = E-1, attendeeId = A-2, title = Remote Facilitation, kind = fishBowl
+  - RMO Agenda (Unconference): lookups T-1, T-2
+  - EVT Topic Suggested (SLC11): topicId = T-3, eventId = E-1, attendeeId = A-3, title = Lunch spots nearby, kind = suggestion
+  - RMO Agenda (Unconference): lookups T-1, T-2, T-3
+  - EVT Session Scheduled (SLC18): sessionId = S-1, topicId = T-1, slot = morning, room = Room A
+  - RMO Agenda (Unconference): lookups T-1..T-3; S-1 | T-1 | Event Sourcing in Practice | presentation | morning | Room A
+  - EVT Session Scheduled (SLC19): sessionId = S-2, topicId = T-2, slot = afternoon, room = Room B
+  - RMO Agenda (Unconference): lookups T-1..T-3; S-1 | T-1 | …; S-2 | T-2 | Remote Facilitation | fishBowl | afternoon | Room B
