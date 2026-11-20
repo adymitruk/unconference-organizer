@@ -66,15 +66,15 @@
   - from: EVT Attendee Registered (by attendeeId)
   - to: SCR Signup Confirmation
 - RMO Topic Ballot (Unconference)
-  - properties: attendeeId, name (lookup objects); topicId, title, kind, name (topic rows)
+  - collections: Topic Ballot [topicId, title, kind, name]; lookups [attendeeId, name]
   - from: EVT Attendee Registered, EVT Topic Suggested (join by attendeeId)
   - to: SCR Topic Ballot
 - RMO Agenda Builder (Unconference)
-  - properties: topicId, title, kind, voteCount (topic rows)
+  - collections: [topicId, title, kind, voteCount]
   - from: EVT Topic Suggested, EVT Topic Voted (join by topicId)
   - to: SCR Agenda Builder
 - RMO Agenda (Unconference)
-  - properties: sessionId, title, kind, slot, room (session rows)
+  - collections: [sessionId, title, kind, slot, room]
   - from: EVT Session Scheduled (by sessionId)
   - to: SCR Agenda
 
