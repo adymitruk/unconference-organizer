@@ -3,6 +3,81 @@
 **USRs:** Alex (Organizer), Pat (Attendee), Riley (Attendee), Jordan (Attendee)
 **SVCs:** Unconference
 
+**COMs:**
+- COM Open Registration
+  - properties: title, eventId, signupToken
+  - from: SCR Open Registration Form
+  - to: EVT Registration Opened
+- COM Register Attendee
+  - properties: eventId, signupToken, name, attendeeId
+  - from: SCR Signup Form
+  - to: EVT Attendee Registered
+  - fails: ERR Name Required → SCR Signup Form; ERR Already Registered
+- COM Suggest Topic
+  - properties: eventId, attendeeId, title, kind, topicId
+  - from: SCR Suggest Topic Form
+  - to: EVT Topic Suggested
+- COM Cast Vote
+  - properties: topicId, attendeeId, voteId
+  - from: SCR Topic Ballot
+  - to: EVT Topic Voted
+- COM Close Registration
+  - properties: eventId
+  - from: SCR Close Registration
+  - to: EVT Registration Closed
+- COM Schedule Session
+  - properties: topicId, title, kind, slot, room, sessionId
+  - from: SCR Agenda Builder
+  - to: EVT Session Scheduled
+
+**EVTs:**
+- EVT Registration Opened (Unconference)
+  - properties: eventId, title, signupToken
+  - from: COM Open Registration
+  - to: RMO Signup QR
+- EVT Attendee Registered (Unconference)
+  - properties: attendeeId, eventId, name
+  - from: COM Register Attendee
+  - to: RMO Registrations, RMO Topic Ballot
+- EVT Topic Suggested (Unconference)
+  - properties: topicId, eventId, attendeeId, title, kind
+  - from: COM Suggest Topic
+  - to: RMO Topic Ballot, RMO Agenda Builder
+- EVT Topic Voted (Unconference)
+  - properties: voteId, topicId, attendeeId
+  - from: COM Cast Vote
+  - to: RMO Agenda Builder
+- EVT Registration Closed (Unconference)
+  - properties: eventId
+  - from: COM Close Registration
+  - to: none
+- EVT Session Scheduled (Unconference)
+  - properties: sessionId, topicId, title, kind, slot, room
+  - from: COM Schedule Session
+  - to: RMO Agenda
+
+**RMOs:**
+- RMO Signup QR (Unconference)
+  - properties: eventId, title, signupUrl
+  - from: EVT Registration Opened (by eventId; MAP Signup Url: signupToken → signupUrl)
+  - to: SCR Signup QR
+- RMO Registrations (Unconference)
+  - properties: attendeeId, name, eventId
+  - from: EVT Attendee Registered (by attendeeId)
+  - to: SCR Signup Confirmation
+- RMO Topic Ballot (Unconference)
+  - properties: attendeeId, name (lookup objects); topicId, title, kind, name (topic rows)
+  - from: EVT Attendee Registered, EVT Topic Suggested (join by attendeeId)
+  - to: SCR Topic Ballot
+- RMO Agenda Builder (Unconference)
+  - properties: topicId, title, kind, voteCount (topic rows)
+  - from: EVT Topic Suggested, EVT Topic Voted (join by topicId)
+  - to: SCR Agenda Builder
+- RMO Agenda (Unconference)
+  - properties: sessionId, title, kind, slot, room (session rows)
+  - from: EVT Session Scheduled (by sessionId)
+  - to: SCR Agenda
+
 **WFLs:**
 - WFL1 Open registration: SLC1–SLC2, ends SCR Signup QR
 - WFL2 Sign up as an attendee: SLC3–SLC8, ends EVT Attendee Registered
@@ -17,13 +92,6 @@
 **ERRs:**
 - ERR Name Required, on COM Register Attendee (SLC6) → SCR Signup Form (SLC7)
 - ERR Already Registered, on COM Register Attendee (GWT after SLC8 success): attendee already has EVT Attendee Registered
-
-**Joins (RMO, matched by id, all EVTs in one SWL):**
-- RMO Signup QR (Unconference): EVT Registration Opened, by eventId
-- RMO Registrations (Unconference): EVT Attendee Registered, by attendeeId
-- RMO Topic Ballot (Unconference): EVT Topic Suggested ⋈ EVT Attendee Registered, by attendeeId
-- RMO Agenda Builder (Unconference): EVT Topic Suggested ⋈ EVT Topic Voted, by topicId
-- RMO Agenda (Unconference): EVT Session Scheduled, by sessionId
 
 **Diagram:**
 
