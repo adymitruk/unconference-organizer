@@ -87,7 +87,7 @@
   - column
     - label title = Adaptech Unconference 2026
     - label signupUrl = https://unconf.example/signup/tok-7f3a
-    - label qr = (show signupUrl as QR)
+    - label qr = signupUrl
 - GWT timeline (RMO Signup QR):
   - RMO Signup QR (Unconference): (empty)
   - EVT Registration Opened (SLC1): eventId = E-1, title = Adaptech Unconference 2026, signupToken = tok-7f3a
@@ -141,10 +141,10 @@
   - row, right-aligned
     - button Sign up → COM Register Attendee
 - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = (empty)
-- ERR Name Required (Unconference), name was empty: message = "Name is required" → SCR Signup Form
+- ERR Name Required (Unconference): name = (empty), message = "Name is required" → SCR Signup Form
 - GWT timeline (COM Register Attendee; Then is the ERR):
   - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = (empty)
-  - ERR Name Required (Unconference): message = "Name is required"
+  - ERR Name Required (Unconference): name = (empty), message = "Name is required"
 
 **SLC7 (NAV slice)**
 - SCR Signup Form (Jordan):
