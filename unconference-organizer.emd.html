@@ -1576,7 +1576,13 @@
     </div>
     <div class="cell gwt" data-slc="2">
       <div class="timeline">
-        <article class="rmo"><h2>Signup QR</h2></article>
+        <article class="rmo"><h2>Signup QR</h2>
+        <dl class="props">
+          <div><dt>eventId</dt><dd></dd></div>
+          <div><dt>title</dt><dd></dd></div>
+          <div><dt>signupUrl</dt><dd></dd></div>
+        </dl>
+        </article>
         <div class="arr v">
           <div class="shaft"></div>
           <div class="tile arrow-down"></div>
@@ -1627,7 +1633,13 @@
     </div>
     <div class="cell gwt" data-slc="5">
       <div class="timeline">
-        <article class="rmo"><h2>Registrations</h2></article>
+        <article class="rmo"><h2>Registrations</h2>
+        <dl class="props">
+          <div><dt>attendeeId</dt><dd></dd></div>
+          <div><dt>name</dt><dd></dd></div>
+          <div><dt>eventId</dt><dd></dd></div>
+        </dl>
+        </article>
         <div class="arr v">
           <div class="shaft"></div>
           <div class="tile arrow-down"></div>
@@ -1726,7 +1738,22 @@
     <div class="cell gwt" data-slc="14"></div>
     <div class="cell gwt" data-slc="15">
       <div class="timeline">
-        <article class="rmo"><h2>Topic Ballot</h2></article>
+        <article class="rmo"><h2>Topic Ballot</h2>
+<div class="props">
+        <table class="collection">
+          <caption>Topic Ballot</caption>
+          <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th><th>Suggested by</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
+          <thead><tr><th>attendeeId</th><th>Suggested by</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+        </article>
         <div class="arr v">
           <div class="shaft"></div>
           <div class="tile arrow-down"></div>
@@ -1745,6 +1772,13 @@
         <article class="rmo"><h2>Topic Ballot</h2>
 <div class="props">
         <table class="collection">
+          <caption>Topic Ballot</caption>
+          <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th><th>Suggested by</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
           <thead><tr><th>attendeeId</th><th>Suggested by</th></tr></thead>
           <tbody>
           <tr><td data-prop="attendeeId">A-1</td><td data-prop="name">Pat Lee</td></tr>
@@ -1770,6 +1804,13 @@
         <article class="rmo"><h2>Topic Ballot</h2>
 <div class="props">
         <table class="collection">
+          <caption>Topic Ballot</caption>
+          <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th><th>Suggested by</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
           <thead><tr><th>attendeeId</th><th>Suggested by</th></tr></thead>
           <tbody>
           <tr><td data-prop="attendeeId">A-1</td><td data-prop="name">Pat Lee</td></tr>
@@ -1796,6 +1837,13 @@
         <article class="rmo"><h2>Topic Ballot</h2>
 <div class="props">
         <table class="collection">
+          <caption>Topic Ballot</caption>
+          <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th><th>Suggested by</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
           <thead><tr><th>attendeeId</th><th>Suggested by</th></tr></thead>
           <tbody>
           <tr><td data-prop="attendeeId">A-1</td><td data-prop="name">Pat Lee</td></tr>
@@ -1927,7 +1975,15 @@
     <div class="cell gwt" data-slc="19"></div>
     <div class="cell gwt" data-slc="20">
       <div class="timeline">
-        <article class="rmo"><h2>Agenda Builder</h2></article>
+        <article class="rmo"><h2>Agenda Builder</h2>
+<div class="props">
+        <table class="collection">
+          <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th><th>Votes</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+        </article>
         <div class="arr v">
           <div class="shaft"></div>
           <div class="tile arrow-down"></div>
@@ -2173,6 +2229,20 @@
     <div class="cell gwt" data-slc="23">
       <div class="timeline">
         <article class="rmo"><h2>Agenda</h2>
+<div class="props">
+        <table class="collection">
+          <caption>Agenda</caption>
+          <thead><tr><th>sessionId</th><th>topicId</th><th>Topic</th><th>Kind</th><th>Slot</th><th>Room</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
+          <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
         </article>
         <div class="arr v">
           <div class="shaft"></div>
@@ -2194,6 +2264,13 @@
         <article class="rmo"><h2>Agenda</h2>
 <div class="props">
         <table class="collection">
+          <caption>Agenda</caption>
+          <thead><tr><th>sessionId</th><th>topicId</th><th>Topic</th><th>Kind</th><th>Slot</th><th>Room</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
           <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th></tr></thead>
           <tbody>
           <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
@@ -2221,6 +2298,13 @@
         <article class="rmo"><h2>Agenda</h2>
 <div class="props">
         <table class="collection">
+          <caption>Agenda</caption>
+          <thead><tr><th>sessionId</th><th>topicId</th><th>Topic</th><th>Kind</th><th>Slot</th><th>Room</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
           <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th></tr></thead>
           <tbody>
           <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
@@ -2249,6 +2333,13 @@
         <article class="rmo"><h2>Agenda</h2>
 <div class="props">
         <table class="collection">
+          <caption>Agenda</caption>
+          <thead><tr><th>sessionId</th><th>topicId</th><th>Topic</th><th>Kind</th><th>Slot</th><th>Room</th></tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <table class="collection">
+          <caption>lookups</caption>
           <thead><tr><th>topicId</th><th>Topic</th><th>Kind</th></tr></thead>
           <tbody>
           <tr><td data-prop="topicId">T-1</td><td data-prop="title">Event Sourcing in Practice</td><td data-prop="kind">presentation</td></tr>
@@ -2336,7 +2427,7 @@
   </div>
   </div>
 </main>
-<script src="../../diagram/connectors.js?v=scruxlabel1"></script>
-<script src="../../diagram/settings.js?v=scruxlabel1"></script>
+<script src="../../diagram/connectors.js?v=gwtstruct1"></script>
+<script src="../../diagram/settings.js?v=gwtstruct1"></script>
 </body>
 </html>

@@ -163,7 +163,7 @@
     - label Signup link (signupUrl) = https://unconf.example/signup/tok-7f3a
     - label QR (qr) = signupUrl
 - GWT timeline (RMO Signup QR):
-  - RMO Signup QR (Unconference): (empty)
+  - RMO Signup QR (Unconference): (empty) eventId, title, signupUrl
   - EVT Registration Opened (SLC1): eventId = E-1, title = Adaptech Unconference 2026, signupToken = tok-7f3a
   - RMO Signup QR (Unconference): eventId = E-1, title = Adaptech Unconference 2026, signupUrl = https://unconf.example/signup/tok-7f3a
 
@@ -201,7 +201,7 @@
     - label (name) = Pat Lee
     - (attendeeId stays on the RMO / COM path — not on the wire)
 - GWT timeline (RMO Registrations):
-  - RMO Registrations (Unconference): (empty)
+  - RMO Registrations (Unconference): (empty) attendeeId, name, eventId
   - EVT Attendee Registered (SLC3): attendeeId = A-1, eventId = E-1, name = Pat Lee
   - RMO Registrations (Unconference): attendeeId = A-1, name = Pat Lee, eventId = E-1
 
@@ -330,19 +330,19 @@
     - row: Remote Facilitation | fishBowl | Riley Ng | Vote
     - row: Lunch spots nearby | suggestion | Jordan Ortiz | Vote
 - GWT timeline (RMO Topic Ballot; Attendee Registered updates lookup; Topic Suggested joins lookup by attendeeId for name):
-  - RMO Topic Ballot (Unconference): (empty)
+  - RMO Topic Ballot (Unconference): (empty) Topic Ballot [topicId, title, kind, name]; lookups [attendeeId, name]
   - EVT Attendee Registered (SLC3): attendeeId = A-1, eventId = E-1, name = Pat Lee
-  - RMO Topic Ballot (Unconference): lookup A-1 → Pat Lee
+  - RMO Topic Ballot (Unconference): Topic Ballot []; lookups [A-1 → Pat Lee]
   - EVT Attendee Registered (SLC5): attendeeId = A-2, eventId = E-1, name = Riley Ng
-  - RMO Topic Ballot (Unconference): lookup A-1 → Pat Lee; A-2 → Riley Ng
+  - RMO Topic Ballot (Unconference): Topic Ballot []; lookups [A-1 → Pat Lee; A-2 → Riley Ng]
   - EVT Attendee Registered (SLC8): attendeeId = A-3, eventId = E-1, name = Jordan Ortiz
-  - RMO Topic Ballot (Unconference): lookup A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz
+  - RMO Topic Ballot (Unconference): Topic Ballot []; lookups [A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz]
   - EVT Topic Suggested (SLC9): topicId = T-1, eventId = E-1, attendeeId = A-1, title = Event Sourcing in Practice, kind = presentation
-  - RMO Topic Ballot (Unconference): lookup A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz; T-1 | Event Sourcing in Practice | presentation | Pat Lee
+  - RMO Topic Ballot (Unconference): Topic Ballot [T-1 | Event Sourcing in Practice | presentation | Pat Lee]; lookups [A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz]
   - EVT Topic Suggested (SLC10): topicId = T-2, eventId = E-1, attendeeId = A-2, title = Remote Facilitation, kind = fishBowl
-  - RMO Topic Ballot (Unconference): lookup A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz; T-1 | Event Sourcing in Practice | presentation | Pat Lee; T-2 | Remote Facilitation | fishBowl | Riley Ng
+  - RMO Topic Ballot (Unconference): Topic Ballot [T-1 | Event Sourcing in Practice | presentation | Pat Lee; T-2 | Remote Facilitation | fishBowl | Riley Ng]; lookups [A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz]
   - EVT Topic Suggested (SLC11): topicId = T-3, eventId = E-1, attendeeId = A-3, title = Lunch spots nearby, kind = suggestion
-  - RMO Topic Ballot (Unconference): lookup A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz; T-1 | Event Sourcing in Practice | presentation | Pat Lee; T-2 | Remote Facilitation | fishBowl | Riley Ng; T-3 | Lunch spots nearby | suggestion | Jordan Ortiz
+  - RMO Topic Ballot (Unconference): Topic Ballot [T-1 | Event Sourcing in Practice | presentation | Pat Lee; T-2 | Remote Facilitation | fishBowl | Riley Ng; T-3 | Lunch spots nearby | suggestion | Jordan Ortiz]; lookups [A-1 → Pat Lee; A-2 → Riley Ng; A-3 → Jordan Ortiz]
 
 **SLC16 (COM slice)**
 - SCR Topic Ballot (Pat):
@@ -401,7 +401,7 @@
     - row: Remote Facilitation | fishBowl | 1 | Schedule
     - row: Lunch spots nearby | suggestion | 0 | Schedule
 - GWT timeline (RMO Agenda Builder; Topic Suggested adds topic rows; Topic Voted joins by topicId to bump voteCount):
-  - RMO Agenda Builder (Unconference): (empty)
+  - RMO Agenda Builder (Unconference): (empty) [topicId, title, kind, voteCount]
   - EVT Topic Suggested (SLC9): topicId = T-1, eventId = E-1, attendeeId = A-1, title = Event Sourcing in Practice, kind = presentation
   - RMO Agenda Builder (Unconference): T-1 | Event Sourcing in Practice | presentation | 0
   - EVT Topic Suggested (SLC10): topicId = T-2, eventId = E-1, attendeeId = A-2, title = Remote Facilitation, kind = fishBowl
@@ -469,14 +469,14 @@
 - SCR Agenda (Riley): same as Alex
 - SCR Agenda (Jordan): same as Alex
 - GWT timeline (RMO Agenda; Topic Suggested fills lookups — including topics with no votes; Session Scheduled adds Agenda rows joined by topicId):
-  - RMO Agenda (Unconference): (empty)
+  - RMO Agenda (Unconference): (empty) Agenda [sessionId, topicId, title, kind, slot, room]; lookups [topicId, title, kind]
   - EVT Topic Suggested (SLC9): topicId = T-1, eventId = E-1, attendeeId = A-1, title = Event Sourcing in Practice, kind = presentation
-  - RMO Agenda (Unconference): lookup T-1 | Event Sourcing in Practice | presentation
+  - RMO Agenda (Unconference): Agenda []; lookups [T-1 | Event Sourcing in Practice | presentation]
   - EVT Topic Suggested (SLC10): topicId = T-2, eventId = E-1, attendeeId = A-2, title = Remote Facilitation, kind = fishBowl
-  - RMO Agenda (Unconference): lookups T-1, T-2
+  - RMO Agenda (Unconference): Agenda []; lookups [T-1, T-2]
   - EVT Topic Suggested (SLC11): topicId = T-3, eventId = E-1, attendeeId = A-3, title = Lunch spots nearby, kind = suggestion
-  - RMO Agenda (Unconference): lookups T-1, T-2, T-3
+  - RMO Agenda (Unconference): Agenda []; lookups [T-1, T-2, T-3]
   - EVT Session Scheduled (SLC18): sessionId = S-1, topicId = T-1, slot = morning, room = Room A
-  - RMO Agenda (Unconference): lookups T-1..T-3; S-1 | T-1 | Event Sourcing in Practice | presentation | morning | Room A
+  - RMO Agenda (Unconference): Agenda [S-1 | T-1 | Event Sourcing in Practice | presentation | morning | Room A]; lookups [T-1..T-3]
   - EVT Session Scheduled (SLC19): sessionId = S-2, topicId = T-2, slot = afternoon, room = Room B
-  - RMO Agenda (Unconference): lookups T-1..T-3; S-1 | T-1 | …; S-2 | T-2 | Remote Facilitation | fishBowl | afternoon | Room B
+  - RMO Agenda (Unconference): Agenda [S-1 | T-1 | …; S-2 | T-2 | Remote Facilitation | fishBowl | afternoon | Room B]; lookups [T-1..T-3]
