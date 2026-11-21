@@ -101,8 +101,8 @@
 | **WFL** | WFL1 Open registration | WFL1 | WFL2 Sign up as an attendee | WFL2 | WFL2 | WFL2 | WFL2 | WFL2 | WFL2 | WFL2 | WFL2 | WFL3 Suggest a topic | WFL3 | WFL3 | WFL4 Vote on topics | WFL4 | WFL4 | WFL4 | WFL5 Close registration | WFL6 Build the agenda | WFL6 | WFL6 | WFL6 |
 | **UBA: Alex (Organizer)** | SCR Open Registration Form | SCR Signup QR | | | | | | | | | | | | | | | | | SCR Close Registration | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda |
 | **UBA: Pat (Attendee)** | | | SCR Signup Form (title) | SCR Signup Form | SCR Signup Confirmation | | | | | | | SCR Suggest Topic Form | | | SCR Topic Ballot | SCR Topic Ballot | | | | | | | SCR Agenda |
-| **UBA: Riley (Attendee)** | | | | | | SCR Signup Form (title) | SCR Signup Form | | | | | | SCR Suggest Topic Form | | | | SCR Topic Ballot | | | | | | SCR Agenda |
-| **UBA: Jordan (Attendee)** | | | | | | | | SCR Signup Form (title) | SCR Signup Form | SCR Signup Form | SCR Signup Form | | | SCR Suggest Topic Form | | | | SCR Topic Ballot | | | | | SCR Agenda |
+| **UBA: Riley (Attendee)** | | | | | | SCR Signup Form (title) | SCR Signup Form | | | | | | SCR Suggest Topic Form | | SCR Topic Ballot | | SCR Topic Ballot | | | | | | SCR Agenda |
+| **UBA: Jordan (Attendee)** | | | | | | | | SCR Signup Form (title) | SCR Signup Form | SCR Signup Form | SCR Signup Form | | | SCR Suggest Topic Form | SCR Topic Ballot | | | SCR Topic Ballot | | | | | SCR Agenda |
 | **MBA** | COM Open Registration | RMO Signup QR ← MAP Signup Url | | COM Register Attendee | RMO Registrations | | COM Register Attendee | | COM Register Attendee | | COM Register Attendee | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | RMO Topic Ballot | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Close Registration | RMO Agenda Builder | COM Schedule Session | COM Schedule Session | RMO Agenda |
 | **LBA: Unconference** | EVT Registration Opened | | | EVT Attendee Registered | | | EVT Attendee Registered | | ERR Name Required | | EVT Attendee Registered | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Registration Closed | | EVT Session Scheduled | EVT Session Scheduled | |
 | **GWT** | Open Registration → Registration Opened | Signup QR → Registration Opened → Signup QR | | Register Attendee → Attendee Registered | Registrations → Attendee Registered → Registrations | | | | Register Attendee → Name Required | | Register Attendee → Attendee Registered → Register Attendee → Already Registered | | | | Topic Ballot → (Attendee Registered → Topic Ballot lookup) ×3 → (Topic Suggested → Topic Ballot row) ×3 | | | | | Agenda Builder → (Topic Suggested → Agenda Builder) ×3 → (Topic Voted → Agenda Builder) ×3 | Topic Suggested ×2 → Schedule Session → Session Scheduled → Schedule Session → Session Scheduled | | Agenda → (Topic Suggested → lookups) ×3 → (Session Scheduled → Agenda row) ×2 |
@@ -329,6 +329,9 @@
     - row: Event Sourcing in Practice | presentation | Pat Lee | Vote
     - row: Remote Facilitation | fishBowl | Riley Ng | Vote
     - row: Lunch spots nearby | suggestion | Jordan Ortiz | Vote
+  - (topicId per row stays as client-side hidden data for a later Cast Vote — not on the wire)
+- SCR Topic Ballot (Riley): same as Pat
+- SCR Topic Ballot (Jordan): same as Pat
 - GWT timeline (RMO Topic Ballot; Attendee Registered updates lookup; Topic Suggested joins lookup by attendeeId for name):
   - RMO Topic Ballot (Unconference): (empty) Topic Ballot [topicId, title, kind, name]; lookups [attendeeId, name]
   - EVT Attendee Registered (SLC3): attendeeId = A-1, eventId = E-1, name = Pat Lee
@@ -347,27 +350,36 @@
 **SLC16 (COM slice)**
 - SCR Topic Ballot (Pat):
   - heading Topics
-  - table
-    - columns: Topic (title) | Kind (kind) | button Vote → COM Cast Vote
-    - row: Remote Facilitation | fishBowl | Vote (chosen)
+  - table, same layout as SLC15 (values carried from prior Topic Ballot — no rmo-data)
+    - columns: Topic (title) | Kind (kind) | Suggested by (name) | button Vote → COM Cast Vote
+    - row: Event Sourcing in Practice | presentation | Pat Lee | Vote
+    - row: Remote Facilitation | fishBowl | Riley Ng | Vote (pressed)
+    - row: Lunch spots nearby | suggestion | Jordan Ortiz | Vote
+  - (topicId T-2 from the pressed RMO row — client-side hidden data; not on the wire)
 - COM Cast Vote: topicId = T-2, attendeeId = A-1, voteId = V-1
 - EVT Topic Voted (Unconference): voteId = V-1, topicId = T-2, attendeeId = A-1
 
 **SLC17 (COM slice)**
 - SCR Topic Ballot (Riley):
   - heading Topics
-  - table
-    - columns: Topic (title) | Kind (kind) | button Vote → COM Cast Vote
-    - row: Event Sourcing in Practice | presentation | Vote (chosen)
+  - table, same layout as SLC15 (values carried from prior Topic Ballot — no rmo-data)
+    - columns: Topic (title) | Kind (kind) | Suggested by (name) | button Vote → COM Cast Vote
+    - row: Event Sourcing in Practice | presentation | Pat Lee | Vote (pressed)
+    - row: Remote Facilitation | fishBowl | Riley Ng | Vote
+    - row: Lunch spots nearby | suggestion | Jordan Ortiz | Vote
+  - (topicId T-1 from the pressed RMO row — client-side hidden data; not on the wire)
 - COM Cast Vote: topicId = T-1, attendeeId = A-2, voteId = V-2
 - EVT Topic Voted (Unconference): voteId = V-2, topicId = T-1, attendeeId = A-2
 
 **SLC18 (COM slice)**
 - SCR Topic Ballot (Jordan):
   - heading Topics
-  - table
-    - columns: Topic (title) | Kind (kind) | button Vote → COM Cast Vote
-    - row: Event Sourcing in Practice | presentation | Vote (chosen)
+  - table, same layout as SLC15 (values carried from prior Topic Ballot — no rmo-data)
+    - columns: Topic (title) | Kind (kind) | Suggested by (name) | button Vote → COM Cast Vote
+    - row: Event Sourcing in Practice | presentation | Pat Lee | Vote (pressed)
+    - row: Remote Facilitation | fishBowl | Riley Ng | Vote
+    - row: Lunch spots nearby | suggestion | Jordan Ortiz | Vote
+  - (topicId T-1 from the pressed RMO row — client-side hidden data; not on the wire)
 - COM Cast Vote: topicId = T-1, attendeeId = A-3, voteId = V-3
 - EVT Topic Voted (Unconference): voteId = V-3, topicId = T-1, attendeeId = A-3
 
