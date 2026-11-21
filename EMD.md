@@ -144,7 +144,7 @@
 - SCR Open Registration Form (Alex):
   - heading Open Registration
   - column
-    - text box title = Adaptech Unconference 2026
+    - text box Conference (title) = Adaptech Unconference 2026
   - row, right-aligned
     - button Open → COM Open Registration
 - COM Open Registration: title = Adaptech Unconference 2026, eventId = E-1, signupToken = tok-7f3a
@@ -159,9 +159,9 @@
 - SCR Signup QR (Alex):
   - heading Signup QR
   - column
-    - label title = Adaptech Unconference 2026
-    - label signupUrl = https://unconf.example/signup/tok-7f3a
-    - label qr = signupUrl
+    - label (title) = Adaptech Unconference 2026
+    - label Signup link (signupUrl) = https://unconf.example/signup/tok-7f3a
+    - label QR (qr) = signupUrl
 - GWT timeline (RMO Signup QR):
   - RMO Signup QR (Unconference): (empty)
   - EVT Registration Opened (SLC1): eventId = E-1, title = Adaptech Unconference 2026, signupToken = tok-7f3a
@@ -173,8 +173,8 @@
 - SCR Signup Form (Pat):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = (empty)
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = (empty)
   - row, right-aligned
     - button Sign up
 - (no COM, no RMO)
@@ -183,8 +183,8 @@
 - SCR Signup Form (Pat):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = Pat Lee
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = Pat Lee
   - row, right-aligned
     - button Sign up → COM Register Attendee
 - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = Pat Lee, attendeeId = A-1
@@ -198,8 +198,8 @@
 - SCR Signup Confirmation (Pat):
   - heading You're signed up
   - column
-    - label attendeeId = A-1
-    - label name = Pat Lee
+    - label (name) = Pat Lee
+    - (attendeeId stays on the RMO / COM path — not on the wire)
 - GWT timeline (RMO Registrations):
   - RMO Registrations (Unconference): (empty)
   - EVT Attendee Registered (SLC3): attendeeId = A-1, eventId = E-1, name = Pat Lee
@@ -209,8 +209,8 @@
 - SCR Signup Form (Riley):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = (empty)
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = (empty)
   - row, right-aligned
     - button Sign up
 - (no COM, no RMO)
@@ -219,8 +219,8 @@
 - SCR Signup Form (Riley):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = Riley Ng
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = Riley Ng
   - row, right-aligned
     - button Sign up → COM Register Attendee
 - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = Riley Ng, attendeeId = A-2
@@ -230,8 +230,8 @@
 - SCR Signup Form (Jordan):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = (empty)
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = (empty)
   - row, right-aligned
     - button Sign up
 - (no COM, no RMO)
@@ -240,8 +240,8 @@
 - SCR Signup Form (Jordan):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = (empty)
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = (empty)
   - row, right-aligned
     - button Sign up → COM Register Attendee
 - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = (empty)
@@ -254,9 +254,9 @@
 - SCR Signup Form (Jordan):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = (empty)
-    - label message = "Name is required"
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = (empty)
+    - label (message) = Name is required
   - row, right-aligned
     - button Sign up → COM Register Attendee
 - (no COM, no RMO)
@@ -265,8 +265,8 @@
 - SCR Signup Form (Jordan):
   - heading Sign Up
   - column
-    - label title = Adaptech Unconference 2026
-    - text box name = Jordan Ortiz
+    - label (title) = Adaptech Unconference 2026
+    - text box Name (name) = Jordan Ortiz
   - row, right-aligned
     - button Sign up → COM Register Attendee
 - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = Jordan Ortiz, attendeeId = A-3
@@ -284,8 +284,8 @@
 - SCR Suggest Topic Form (Pat):
   - heading Suggest a Topic
   - column
-    - text box title = Event Sourcing in Practice
-    - dropdown kind = presentation
+    - text box Topic (title) = Event Sourcing in Practice
+    - dropdown Kind (kind) = presentation
   - row, right-aligned
     - button Suggest → COM Suggest Topic
 - COM Suggest Topic: eventId = E-1, attendeeId = A-1, title = Event Sourcing in Practice, kind = presentation, topicId = T-1
@@ -295,8 +295,8 @@
 - SCR Suggest Topic Form (Riley):
   - heading Suggest a Topic
   - column
-    - text box title = Remote Facilitation
-    - dropdown kind = fishBowl
+    - text box Topic (title) = Remote Facilitation
+    - dropdown Kind (kind) = fishBowl
   - row, right-aligned
     - button Suggest → COM Suggest Topic
 - COM Suggest Topic: eventId = E-1, attendeeId = A-2, title = Remote Facilitation, kind = fishBowl, topicId = T-2
@@ -306,8 +306,8 @@
 - SCR Suggest Topic Form (Jordan):
   - heading Suggest a Topic
   - column
-    - text box title = Lunch spots nearby
-    - dropdown kind = suggestion
+    - text box Topic (title) = Lunch spots nearby
+    - dropdown Kind (kind) = suggestion
   - row, right-aligned
     - button Suggest → COM Suggest Topic
 - COM Suggest Topic: eventId = E-1, attendeeId = A-3, title = Lunch spots nearby, kind = suggestion, topicId = T-3
@@ -325,7 +325,7 @@
 - SCR Topic Ballot (Pat):
   - heading Topics
   - table, one row per topic row of RMO Topic Ballot
-    - columns: title | kind | name | button Vote → COM Cast Vote
+    - columns: Topic (title) | Kind (kind) | Suggested by (name) | button Vote → COM Cast Vote
     - row: Event Sourcing in Practice | presentation | Pat Lee | Vote
     - row: Remote Facilitation | fishBowl | Riley Ng | Vote
     - row: Lunch spots nearby | suggestion | Jordan Ortiz | Vote
@@ -348,7 +348,7 @@
 - SCR Topic Ballot (Pat):
   - heading Topics
   - table
-    - columns: title | kind | button Vote → COM Cast Vote
+    - columns: Topic (title) | Kind (kind) | button Vote → COM Cast Vote
     - row: Remote Facilitation | fishBowl | Vote (chosen)
 - COM Cast Vote: topicId = T-2, attendeeId = A-1, voteId = V-1
 - EVT Topic Voted (Unconference): voteId = V-1, topicId = T-2, attendeeId = A-1
@@ -357,7 +357,7 @@
 - SCR Topic Ballot (Riley):
   - heading Topics
   - table
-    - columns: title | kind | button Vote → COM Cast Vote
+    - columns: Topic (title) | Kind (kind) | button Vote → COM Cast Vote
     - row: Event Sourcing in Practice | presentation | Vote (chosen)
 - COM Cast Vote: topicId = T-1, attendeeId = A-2, voteId = V-2
 - EVT Topic Voted (Unconference): voteId = V-2, topicId = T-1, attendeeId = A-2
@@ -366,7 +366,7 @@
 - SCR Topic Ballot (Jordan):
   - heading Topics
   - table
-    - columns: title | kind | button Vote → COM Cast Vote
+    - columns: Topic (title) | Kind (kind) | button Vote → COM Cast Vote
     - row: Event Sourcing in Practice | presentation | Vote (chosen)
 - COM Cast Vote: topicId = T-1, attendeeId = A-3, voteId = V-3
 - EVT Topic Voted (Unconference): voteId = V-3, topicId = T-1, attendeeId = A-3
@@ -377,8 +377,8 @@
 - SCR Close Registration (Alex):
   - heading Close Registration
   - column
-    - label title = Adaptech Unconference 2026
-    - label attendees = 3
+    - label (title) = Adaptech Unconference 2026
+    - label Attendees (attendees) = 3
   - row, right-aligned
     - button Close → COM Close Registration
 - COM Close Registration: eventId = E-1
@@ -396,7 +396,7 @@
 - SCR Agenda Builder (Alex):
   - heading Build Agenda
   - table, one row per row of RMO Agenda Builder
-    - columns: title | kind | voteCount | button Schedule → SCR Agenda Builder
+    - columns: Topic (title) | Kind (kind) | Votes (voteCount) | button Schedule → SCR Agenda Builder
     - row: Event Sourcing in Practice | presentation | 2 | Schedule
     - row: Remote Facilitation | fishBowl | 1 | Schedule
     - row: Lunch spots nearby | suggestion | 0 | Schedule
@@ -419,10 +419,11 @@
 - SCR Agenda Builder (Alex):
   - heading Schedule Session
   - group Topic (read only; title/kind from prior SCR via session — not COM fields)
-    - row: label topicId = T-1 | label title = Event Sourcing in Practice | label kind = presentation
+    - row: label (title) = Event Sourcing in Practice | label (kind) = presentation
+    - (topicId from the selected Agenda Builder row — session for the COM)
   - column
-    - text box slot = morning
-    - text box room = Room A
+    - text box Slot (slot) = morning
+    - text box Room (room) = Room A
   - row, right-aligned
     - button Schedule → COM Schedule Session
 - COM Schedule Session: topicId = T-1, slot = morning, room = Room A, sessionId = S-1
@@ -439,10 +440,11 @@
 - SCR Agenda Builder (Alex):
   - heading Schedule Session
   - group Topic (read only; title/kind from prior SCR via session — not COM fields)
-    - row: label topicId = T-2 | label title = Remote Facilitation | label kind = fishBowl
+    - row: label (title) = Remote Facilitation | label (kind) = fishBowl
+    - (topicId from the selected Agenda Builder row — session for the COM)
   - column
-    - text box slot = afternoon
-    - text box room = Room B
+    - text box Slot (slot) = afternoon
+    - text box Room (room) = Room B
   - row, right-aligned
     - button Schedule → COM Schedule Session
 - COM Schedule Session: topicId = T-2, slot = afternoon, room = Room B, sessionId = S-2
@@ -460,7 +462,7 @@
 - SCR Agenda (Alex):
   - heading Agenda
   - table, one row per Agenda row of RMO Agenda
-    - columns: slot | room | title | kind
+    - columns: Slot (slot) | Room (room) | Topic (title) | Kind (kind)
     - row: morning | Room A | Event Sourcing in Practice | presentation
     - row: afternoon | Room B | Remote Facilitation | fishBowl
 - SCR Agenda (Pat): same as Alex
