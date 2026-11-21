@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>Unconference organizer</title>
-  <link rel="stylesheet" href="../../diagram/diagram.css?v=combtn1">
+  <link rel="stylesheet" href="../../diagram/diagram.css?v=noupperoverlap2">
 </head>
 <body>
-<main class="emd" style="--slices: 20" data-joins="evt-registration-opened:rmo-signup-qr,evt-attendee-registered-pat:rmo-registrations,evt-attendee-registered-pat:rmo-topic-ballot,evt-attendee-registered-riley:rmo-topic-ballot,evt-attendee-registered-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-topic-ballot,evt-topic-suggested-riley:rmo-topic-ballot,evt-topic-suggested-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-agenda-builder,evt-topic-suggested-riley:rmo-agenda-builder,evt-topic-suggested-jordan:rmo-agenda-builder,evt-topic-voted-pat:rmo-agenda-builder,evt-topic-voted-riley:rmo-agenda-builder,evt-topic-voted-jordan:rmo-agenda-builder,evt-topic-suggested-pat:rmo-agenda,evt-topic-suggested-riley:rmo-agenda,evt-topic-suggested-jordan:rmo-agenda,evt-session-scheduled-1:rmo-agenda,evt-session-scheduled-2:rmo-agenda,err-name-required:scr-signup-form-jordan-error">
+<main class="emd" style="--slices: 23" data-joins="evt-registration-opened:rmo-signup-qr,rmo-signup-qr:scr-signup-form-pat-title,rmo-signup-qr:scr-signup-form-riley-title,rmo-signup-qr:scr-signup-form-jordan-title,evt-attendee-registered-pat:rmo-registrations,evt-attendee-registered-pat:rmo-topic-ballot,evt-attendee-registered-riley:rmo-topic-ballot,evt-attendee-registered-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-topic-ballot,evt-topic-suggested-riley:rmo-topic-ballot,evt-topic-suggested-jordan:rmo-topic-ballot,evt-topic-suggested-pat:rmo-agenda-builder,evt-topic-suggested-riley:rmo-agenda-builder,evt-topic-suggested-jordan:rmo-agenda-builder,evt-topic-voted-pat:rmo-agenda-builder,evt-topic-voted-riley:rmo-agenda-builder,evt-topic-voted-jordan:rmo-agenda-builder,evt-topic-suggested-pat:rmo-agenda,evt-topic-suggested-riley:rmo-agenda,evt-topic-suggested-jordan:rmo-agenda,evt-session-scheduled-1:rmo-agenda,evt-session-scheduled-2:rmo-agenda,err-name-required:scr-signup-form-jordan-error">
   <div class="sheet">
   <div class="board">
     <div class="cell lane emd-corner"></div>
     <div class="cell wfl" data-slc="1" data-span="2"><span>Open registration</span></div>
-    <div class="cell wfl" data-slc="3" data-span="6"><span>Sign up as an attendee</span></div>
-    <div class="cell wfl" data-slc="9" data-span="3"><span>Suggest a topic</span></div>
-    <div class="cell wfl" data-slc="12" data-span="4"><span>Vote on topics</span></div>
-    <div class="cell wfl" data-slc="16" data-span="1"><span>Close registration</span></div>
-    <div class="cell wfl" data-slc="17" data-span="4"><span>Build the agenda</span></div>
+    <div class="cell wfl" data-slc="3" data-span="9"><span>Sign up as an attendee</span></div>
+    <div class="cell wfl" data-slc="12" data-span="3"><span>Suggest a topic</span></div>
+    <div class="cell wfl" data-slc="15" data-span="4"><span>Vote on topics</span></div>
+    <div class="cell wfl" data-slc="19" data-span="1"><span>Close registration</span></div>
+    <div class="cell wfl" data-slc="20" data-span="4"><span>Build the agenda</span></div>
 
     <div class="cell lane open">Alex (Organizer)</div>
     <div class="cell uba" data-slc="1" data-lane="alex">
@@ -67,7 +67,10 @@
     <div class="cell uba" data-slc="13" data-lane="alex"></div>
     <div class="cell uba" data-slc="14" data-lane="alex"></div>
     <div class="cell uba" data-slc="15" data-lane="alex"></div>
-    <div class="cell uba" data-slc="16" data-lane="alex">
+    <div class="cell uba" data-slc="16" data-lane="alex"></div>
+    <div class="cell uba" data-slc="17" data-lane="alex"></div>
+    <div class="cell uba" data-slc="18" data-lane="alex"></div>
+    <div class="cell uba" data-slc="19" data-lane="alex">
       <article class="scr" id="scr-close-registration">
         <h2>Close Registration</h2>
         <div class="wire">
@@ -85,7 +88,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="17" data-lane="alex">
+    <div class="cell uba" data-slc="20" data-lane="alex">
       <article class="scr" id="scr-agenda-builder">
         <h2>Agenda Builder</h2>
         <div class="wire">
@@ -109,7 +112,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="18" data-lane="alex">
+    <div class="cell uba" data-slc="21" data-lane="alex">
       <article class="scr" id="scr-schedule-session-1">
         <h2>Agenda Builder</h2>
         <div class="wire">
@@ -134,7 +137,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="19" data-lane="alex">
+    <div class="cell uba" data-slc="22" data-lane="alex">
       <article class="scr" id="scr-schedule-session-2">
         <h2>Agenda Builder</h2>
         <div class="wire">
@@ -159,7 +162,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="20" data-lane="alex">
+    <div class="cell uba" data-slc="23" data-lane="alex">
       <article class="scr" id="scr-agenda-alex">
         <h2>Agenda</h2>
         <div class="wire">
@@ -182,6 +185,7 @@
         </div>
       </div>
     </div>
+
     <div class="cell lane open">Pat (Attendee)</div>
     <div class="cell uba" data-slc="1" data-lane="pat">
       <div class="gap">
@@ -198,6 +202,25 @@
       </div>
     </div>
     <div class="cell uba" data-slc="3" data-lane="pat">
+      <article class="scr" id="scr-signup-form-pat-title">
+        <h2>Signup Form</h2>
+        <div class="wire">
+          <div class="col">
+            <p class="heading">Sign Up</p>
+            <p class="label">title <span class="rmo-data" data-prop="title">Adaptech Unconference 2026</span></p>
+            <label class="text">name <input data-prop="name" value="" readonly></label>
+            <div class="row end"><button type="button">Sign up</button></div>
+          </div>
+        </div>
+      </article>
+      <div class="gap">
+        <div class="arr v">
+          <div class="tile arrow-up"></div>
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="4" data-lane="pat">
       <article class="scr" id="scr-signup-form-pat">
         <h2>Signup Form</h2>
         <div class="wire">
@@ -215,7 +238,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="4" data-lane="pat">
+    <div class="cell uba" data-slc="5" data-lane="pat">
       <article class="scr" id="scr-signup-confirmation-pat">
         <h2>Signup Confirmation</h2>
         <div class="wire">
@@ -233,11 +256,13 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="5" data-lane="pat"></div>
     <div class="cell uba" data-slc="6" data-lane="pat"></div>
     <div class="cell uba" data-slc="7" data-lane="pat"></div>
     <div class="cell uba" data-slc="8" data-lane="pat"></div>
-    <div class="cell uba" data-slc="9" data-lane="pat">
+    <div class="cell uba" data-slc="9" data-lane="pat"></div>
+    <div class="cell uba" data-slc="10" data-lane="pat"></div>
+    <div class="cell uba" data-slc="11" data-lane="pat"></div>
+    <div class="cell uba" data-slc="12" data-lane="pat">
       <article class="scr" id="scr-suggest-topic-pat">
         <h2>Suggest Topic Form</h2>
         <div class="wire">
@@ -255,9 +280,9 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="10" data-lane="pat"></div>
-    <div class="cell uba" data-slc="11" data-lane="pat"></div>
-    <div class="cell uba" data-slc="12" data-lane="pat">
+    <div class="cell uba" data-slc="13" data-lane="pat"></div>
+    <div class="cell uba" data-slc="14" data-lane="pat"></div>
+    <div class="cell uba" data-slc="15" data-lane="pat">
       <article class="scr" id="scr-topic-ballot-pat">
         <h2>Topic Ballot</h2>
         <div class="wire">
@@ -281,7 +306,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="13" data-lane="pat">
+    <div class="cell uba" data-slc="16" data-lane="pat">
       <article class="scr" id="scr-topic-ballot-pat-vote">
         <h2>Topic Ballot</h2>
         <div class="wire">
@@ -307,29 +332,8 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="14" data-lane="pat"></div>
-    <div class="cell uba" data-slc="15" data-lane="pat"></div>
-    <div class="cell uba" data-slc="16" data-lane="pat">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="17" data-lane="pat">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="18" data-lane="pat">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
+    <div class="cell uba" data-slc="17" data-lane="pat"></div>
+    <div class="cell uba" data-slc="18" data-lane="pat"></div>
     <div class="cell uba" data-slc="19" data-lane="pat">
       <div class="gap">
         <div class="arr v">
@@ -338,6 +342,27 @@
       </div>
     </div>
     <div class="cell uba" data-slc="20" data-lane="pat">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="21" data-lane="pat">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="22" data-lane="pat">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="23" data-lane="pat">
       <article class="scr" id="scr-agenda-pat">
         <h2>Agenda</h2>
         <div class="wire">
@@ -360,6 +385,7 @@
         </div>
       </div>
     </div>
+
     <div class="cell lane open">Riley (Attendee)</div>
     <div class="cell uba" data-slc="1" data-lane="riley">
       <div class="gap">
@@ -375,7 +401,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="3" data-lane="riley">
+        <div class="cell uba" data-slc="3" data-lane="riley">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -390,6 +416,32 @@
       </div>
     </div>
     <div class="cell uba" data-slc="5" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="6" data-lane="riley">
+      <article class="scr" id="scr-signup-form-riley-title">
+        <h2>Signup Form</h2>
+        <div class="wire">
+          <div class="col">
+            <p class="heading">Sign Up</p>
+            <p class="label">title <span class="rmo-data" data-prop="title">Adaptech Unconference 2026</span></p>
+            <label class="text">name <input data-prop="name" value="" readonly></label>
+            <div class="row end"><button type="button">Sign up</button></div>
+          </div>
+        </div>
+      </article>
+      <div class="gap">
+        <div class="arr v">
+          <div class="tile arrow-up"></div>
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="7" data-lane="riley">
       <article class="scr" id="scr-signup-form-riley">
         <h2>Signup Form</h2>
         <div class="wire">
@@ -407,17 +459,18 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="6" data-lane="riley"></div>
-    <div class="cell uba" data-slc="7" data-lane="riley"></div>
     <div class="cell uba" data-slc="8" data-lane="riley"></div>
-    <div class="cell uba" data-slc="9" data-lane="riley">
+    <div class="cell uba" data-slc="9" data-lane="riley"></div>
+    <div class="cell uba" data-slc="10" data-lane="riley"></div>
+    <div class="cell uba" data-slc="11" data-lane="riley"></div>
+    <div class="cell uba" data-slc="12" data-lane="riley">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="10" data-lane="riley">
+    <div class="cell uba" data-slc="13" data-lane="riley">
       <article class="scr" id="scr-suggest-topic-riley">
         <h2>Suggest Topic Form</h2>
         <div class="wire">
@@ -435,22 +488,22 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="11" data-lane="riley"></div>
-    <div class="cell uba" data-slc="12" data-lane="riley">
+    <div class="cell uba" data-slc="14" data-lane="riley"></div>
+    <div class="cell uba" data-slc="15" data-lane="riley">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="13" data-lane="riley">
+    <div class="cell uba" data-slc="16" data-lane="riley">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="14" data-lane="riley">
+    <div class="cell uba" data-slc="17" data-lane="riley">
       <article class="scr" id="scr-topic-ballot-riley-vote">
         <h2>Topic Ballot</h2>
         <div class="wire">
@@ -476,28 +529,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="15" data-lane="riley"></div>
-    <div class="cell uba" data-slc="16" data-lane="riley">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="17" data-lane="riley">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="18" data-lane="riley">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
+    <div class="cell uba" data-slc="18" data-lane="riley"></div>
     <div class="cell uba" data-slc="19" data-lane="riley">
       <div class="gap">
         <div class="arr v">
@@ -506,6 +538,27 @@
       </div>
     </div>
     <div class="cell uba" data-slc="20" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="21" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="22" data-lane="riley">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="23" data-lane="riley">
       <article class="scr" id="scr-agenda-riley">
         <h2>Agenda</h2>
         <div class="wire">
@@ -528,6 +581,7 @@
         </div>
       </div>
     </div>
+
     <div class="cell lane open">Jordan (Attendee)</div>
     <div class="cell uba" data-slc="1" data-lane="jordan">
       <div class="gap">
@@ -543,7 +597,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="3" data-lane="jordan">
+        <div class="cell uba" data-slc="3" data-lane="jordan">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -564,7 +618,40 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="6" data-lane="jordan">
+        <div class="cell uba" data-slc="6" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="7" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="8" data-lane="jordan">
+      <article class="scr" id="scr-signup-form-jordan-title">
+        <h2>Signup Form</h2>
+        <div class="wire">
+          <div class="col">
+            <p class="heading">Sign Up</p>
+            <p class="label">title <span class="rmo-data" data-prop="title">Adaptech Unconference 2026</span></p>
+            <label class="text">name <input data-prop="name" value="" readonly></label>
+            <div class="row end"><button type="button">Sign up</button></div>
+          </div>
+        </div>
+      </article>
+      <div class="gap">
+        <div class="arr v">
+          <div class="tile arrow-up"></div>
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="9" data-lane="jordan">
       <article class="scr" id="scr-signup-form-jordan-empty">
         <h2>Signup Form</h2>
         <div class="wire">
@@ -582,7 +669,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="7" data-lane="jordan">
+    <div class="cell uba" data-slc="10" data-lane="jordan">
       <article class="scr" id="scr-signup-form-jordan-error">
         <h2>Signup Form</h2>
         <div class="wire">
@@ -601,7 +688,7 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="8" data-lane="jordan">
+    <div class="cell uba" data-slc="11" data-lane="jordan">
       <article class="scr" id="scr-signup-form-jordan">
         <h2>Signup Form</h2>
         <div class="wire">
@@ -610,38 +697,6 @@
             <p class="label">title <span data-prop="title">Adaptech Unconference 2026</span></p>
             <label class="text">name <input class="com-data" data-prop="name" value="Jordan Ortiz" readonly></label>
             <div class="row end"><button type="button" class="com-data">Sign up</button></div>
-          </div>
-        </div>
-      </article>
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="9" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="10" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="11" data-lane="jordan">
-      <article class="scr" id="scr-suggest-topic-jordan">
-        <h2>Suggest Topic Form</h2>
-        <div class="wire">
-          <div class="col">
-            <p class="heading">Suggest a Topic</p>
-            <label class="text">title <input class="com-data" data-prop="title" value="Lunch spots nearby" readonly></label>
-            <label class="dropdown">kind <select class="com-data" data-prop="kind" disabled><option>suggestion</option></select></label>
-            <div class="row end"><button type="button" class="com-data">Suggest</button></div>
           </div>
         </div>
       </article>
@@ -666,6 +721,17 @@
       </div>
     </div>
     <div class="cell uba" data-slc="14" data-lane="jordan">
+      <article class="scr" id="scr-suggest-topic-jordan">
+        <h2>Suggest Topic Form</h2>
+        <div class="wire">
+          <div class="col">
+            <p class="heading">Suggest a Topic</p>
+            <label class="text">title <input class="com-data" data-prop="title" value="Lunch spots nearby" readonly></label>
+            <label class="dropdown">kind <select class="com-data" data-prop="kind" disabled><option>suggestion</option></select></label>
+            <div class="row end"><button type="button" class="com-data">Suggest</button></div>
+          </div>
+        </div>
+      </article>
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -673,6 +739,27 @@
       </div>
     </div>
     <div class="cell uba" data-slc="15" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="16" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="17" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="18" data-lane="jordan">
       <article class="scr" id="scr-topic-ballot-jordan-vote">
         <h2>Topic Ballot</h2>
         <div class="wire">
@@ -698,27 +785,6 @@
         </div>
       </div>
     </div>
-    <div class="cell uba" data-slc="16" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="17" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
-    <div class="cell uba" data-slc="18" data-lane="jordan">
-      <div class="gap">
-        <div class="arr v">
-          <div class="shaft"></div>
-        </div>
-      </div>
-    </div>
     <div class="cell uba" data-slc="19" data-lane="jordan">
       <div class="gap">
         <div class="arr v">
@@ -727,6 +793,27 @@
       </div>
     </div>
     <div class="cell uba" data-slc="20" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="21" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="22" data-lane="jordan">
+      <div class="gap">
+        <div class="arr v">
+          <div class="shaft"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cell uba" data-slc="23" data-lane="jordan">
       <article class="scr" id="scr-agenda-jordan">
         <h2>Agenda</h2>
         <div class="wire">
@@ -749,6 +836,32 @@
         </div>
       </div>
     </div>
+
+    <div class="cell lane open"></div>
+    <div class="cell connector connector-upper" data-slc="1"></div>
+    <div class="cell connector connector-upper" data-slc="2"></div>
+    <div class="cell connector connector-upper" data-slc="3"></div>
+    <div class="cell connector connector-upper" data-slc="4"></div>
+    <div class="cell connector connector-upper" data-slc="5"></div>
+    <div class="cell connector connector-upper" data-slc="6"></div>
+    <div class="cell connector connector-upper" data-slc="7"></div>
+    <div class="cell connector connector-upper" data-slc="8"></div>
+    <div class="cell connector connector-upper" data-slc="9"></div>
+    <div class="cell connector connector-upper" data-slc="10"></div>
+    <div class="cell connector connector-upper" data-slc="11"></div>
+    <div class="cell connector connector-upper" data-slc="12"></div>
+    <div class="cell connector connector-upper" data-slc="13"></div>
+    <div class="cell connector connector-upper" data-slc="14"></div>
+    <div class="cell connector connector-upper" data-slc="15"></div>
+    <div class="cell connector connector-upper" data-slc="16"></div>
+    <div class="cell connector connector-upper" data-slc="17"></div>
+    <div class="cell connector connector-upper" data-slc="18"></div>
+    <div class="cell connector connector-upper" data-slc="19"></div>
+    <div class="cell connector connector-upper" data-slc="20"></div>
+    <div class="cell connector connector-upper" data-slc="21"></div>
+    <div class="cell connector connector-upper" data-slc="22"></div>
+    <div class="cell connector connector-upper" data-slc="23"></div>
+
     <div class="cell lane open"></div>
     <div class="cell mba" data-slc="1">
       <div class="gap">
@@ -788,7 +901,8 @@
       <p class="map">Signup Url: signupToken → signupUrl</p>
       <div class="gap"></div>
     </div>
-    <div class="cell mba" data-slc="3">
+    <div class="cell mba" data-slc="3"></div>
+    <div class="cell mba" data-slc="4">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -810,7 +924,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="4">
+    <div class="cell mba" data-slc="5">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -826,7 +940,8 @@
       </article>
       <div class="gap"></div>
     </div>
-    <div class="cell mba" data-slc="5">
+    <div class="cell mba" data-slc="6"></div>
+    <div class="cell mba" data-slc="7">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -848,7 +963,8 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="6">
+    <div class="cell mba" data-slc="8"></div>
+    <div class="cell mba" data-slc="9">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -869,8 +985,8 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="7"></div>
-    <div class="cell mba" data-slc="8">
+    <div class="cell mba" data-slc="10"></div>
+    <div class="cell mba" data-slc="11">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -892,7 +1008,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="9">
+    <div class="cell mba" data-slc="12">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -915,7 +1031,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="10">
+    <div class="cell mba" data-slc="13">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -938,7 +1054,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="11">
+    <div class="cell mba" data-slc="14">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -961,7 +1077,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="12">
+    <div class="cell mba" data-slc="15">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -992,7 +1108,7 @@
       </article>
       <div class="gap"></div>
     </div>
-    <div class="cell mba" data-slc="13">
+    <div class="cell mba" data-slc="16">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1013,7 +1129,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="14">
+    <div class="cell mba" data-slc="17">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1034,7 +1150,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="15">
+    <div class="cell mba" data-slc="18">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1055,7 +1171,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="16">
+    <div class="cell mba" data-slc="19">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1074,7 +1190,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="17">
+    <div class="cell mba" data-slc="20">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1095,7 +1211,7 @@
       </article>
       <div class="gap"></div>
     </div>
-    <div class="cell mba" data-slc="18">
+    <div class="cell mba" data-slc="21">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1117,7 +1233,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="19">
+    <div class="cell mba" data-slc="22">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1139,7 +1255,7 @@
         </div>
       </div>
     </div>
-    <div class="cell mba" data-slc="20">
+    <div class="cell mba" data-slc="23">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1169,6 +1285,7 @@
       </article>
       <div class="gap"></div>
     </div>
+
     <div class="cell lane open"></div>
     <div class="cell connector" data-slc="1"></div>
     <div class="cell connector" data-slc="2"></div>
@@ -1190,6 +1307,10 @@
     <div class="cell connector" data-slc="18"></div>
     <div class="cell connector" data-slc="19"></div>
     <div class="cell connector" data-slc="20"></div>
+    <div class="cell connector" data-slc="21"></div>
+    <div class="cell connector" data-slc="22"></div>
+    <div class="cell connector" data-slc="23"></div>
+
     <div class="cell lane open lba-head">
       <div class="lba-head-gap" aria-hidden="true"></div>
       <div class="lba-head-label">Unconference</div>
@@ -1211,7 +1332,8 @@
       </article>
     </div>
     <div class="cell lba foot" data-slc="2" data-lane="unconference"></div>
-    <div class="cell lba foot" data-slc="3" data-lane="unconference">
+    <div class="cell lba foot" data-slc="3" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="4" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1227,8 +1349,9 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="4" data-lane="unconference"></div>
-    <div class="cell lba foot" data-slc="5" data-lane="unconference">
+    <div class="cell lba foot" data-slc="5" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="6" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="7" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1244,7 +1367,8 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="6" data-lane="unconference">
+    <div class="cell lba foot" data-slc="8" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="9" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1259,8 +1383,8 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="7" data-lane="unconference"></div>
-    <div class="cell lba foot" data-slc="8" data-lane="unconference">
+    <div class="cell lba foot" data-slc="10" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="11" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1276,7 +1400,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="9" data-lane="unconference">
+    <div class="cell lba foot" data-slc="12" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1294,7 +1418,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="10" data-lane="unconference">
+    <div class="cell lba foot" data-slc="13" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1312,7 +1436,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="11" data-lane="unconference">
+    <div class="cell lba foot" data-slc="14" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1330,8 +1454,8 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="12" data-lane="unconference"></div>
-    <div class="cell lba foot" data-slc="13" data-lane="unconference">
+    <div class="cell lba foot" data-slc="15" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="16" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1347,7 +1471,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="14" data-lane="unconference">
+    <div class="cell lba foot" data-slc="17" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1363,7 +1487,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="15" data-lane="unconference">
+    <div class="cell lba foot" data-slc="18" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1379,7 +1503,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="16" data-lane="unconference">
+    <div class="cell lba foot" data-slc="19" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1393,8 +1517,8 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="17" data-lane="unconference"></div>
-    <div class="cell lba foot" data-slc="18" data-lane="unconference">
+    <div class="cell lba foot" data-slc="20" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="21" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1411,7 +1535,7 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="19" data-lane="unconference">
+    <div class="cell lba foot" data-slc="22" data-lane="unconference">
       <div class="gap">
         <div class="arr v">
           <div class="shaft"></div>
@@ -1428,7 +1552,8 @@
         </dl>
       </article>
     </div>
-    <div class="cell lba foot" data-slc="20" data-lane="unconference"></div>
+    <div class="cell lba foot" data-slc="23" data-lane="unconference"></div>
+
     <div class="cell lane open">GWT</div>
     <div class="cell gwt" data-slc="1">
       <div class="timeline">
@@ -1479,7 +1604,8 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="3">
+    <div class="cell gwt" data-slc="3"></div>
+    <div class="cell gwt" data-slc="4">
       <div class="timeline">
         <article class="com"><h2>Register Attendee</h2>
 <dl class="props">
@@ -1502,7 +1628,7 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="4">
+    <div class="cell gwt" data-slc="5">
       <div class="timeline">
         <article class="rmo"><h2>Registrations</h2></article>
         <div class="arr v">
@@ -1529,8 +1655,10 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="5"></div>
-    <div class="cell gwt" data-slc="6">
+    <div class="cell gwt" data-slc="6"></div>
+    <div class="cell gwt" data-slc="7"></div>
+    <div class="cell gwt" data-slc="8"></div>
+    <div class="cell gwt" data-slc="9">
       <div class="timeline">
         <article class="com"><h2>Register Attendee</h2>
 <dl class="props">
@@ -1551,8 +1679,8 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="7"></div>
-    <div class="cell gwt" data-slc="8">
+    <div class="cell gwt" data-slc="10"></div>
+    <div class="cell gwt" data-slc="11">
       <div class="timeline">
         <article class="com"><h2>Register Attendee</h2>
 <dl class="props">
@@ -1596,10 +1724,10 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="9"></div>
-    <div class="cell gwt" data-slc="10"></div>
-    <div class="cell gwt" data-slc="11"></div>
-    <div class="cell gwt" data-slc="12">
+    <div class="cell gwt" data-slc="12"></div>
+    <div class="cell gwt" data-slc="13"></div>
+    <div class="cell gwt" data-slc="14"></div>
+    <div class="cell gwt" data-slc="15">
       <div class="timeline">
         <article class="rmo"><h2>Topic Ballot</h2></article>
         <div class="arr v">
@@ -1796,11 +1924,11 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="13"></div>
-    <div class="cell gwt" data-slc="14"></div>
-    <div class="cell gwt" data-slc="15"></div>
     <div class="cell gwt" data-slc="16"></div>
-    <div class="cell gwt" data-slc="17">
+    <div class="cell gwt" data-slc="17"></div>
+    <div class="cell gwt" data-slc="18"></div>
+    <div class="cell gwt" data-slc="19"></div>
+    <div class="cell gwt" data-slc="20">
       <div class="timeline">
         <article class="rmo"><h2>Agenda Builder</h2></article>
         <div class="arr v">
@@ -1970,7 +2098,7 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="18">
+    <div class="cell gwt" data-slc="21">
       <div class="timeline">
         <article class="evt"><h2>Topic Suggested</h2>
 <dl class="props">
@@ -2044,8 +2172,8 @@
         </article>
       </div>
     </div>
-    <div class="cell gwt" data-slc="19"></div>
-        <div class="cell gwt" data-slc="20">
+    <div class="cell gwt" data-slc="22"></div>
+    <div class="cell gwt" data-slc="23">
       <div class="timeline">
         <article class="rmo"><h2>Agenda</h2>
         </article>
@@ -2206,12 +2334,12 @@
         </table>
       </div>
         </article>
-      </div>
-    </div>
+  </div>
+  </div>
   </div>
   </div>
 </main>
-<script src="../../diagram/connectors.js?v=combtn1"></script>
-<script src="../../diagram/settings.js?v=combtn1"></script>
+<script src="../../diagram/connectors.js?v=rmobundle1"></script>
+<script src="../../diagram/settings.js?v=rmobundle2"></script>
 </body>
 </html>
