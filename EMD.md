@@ -714,7 +714,7 @@ Ten topic suggestions from attendees. T-3 (Lunch spots nearby) and T-9 (Coffee c
 - SCR Close Registration (Alex):
   - heading Close Registration
   - Attendees = 3
-  - button Close → COM Close Registration
+    - button Close → COM Close Registration
 - COM Close Registration: eventId = E-1
 - EVT Registration Closed (Unconference): eventId = E-1
 
