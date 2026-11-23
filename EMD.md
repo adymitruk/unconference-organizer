@@ -66,7 +66,7 @@
 - EVT Topic Suggested (Unconference)
   - properties: topicId, eventId, attendeeId, title, kind
   - from: COM Suggest Topic
-  - to: RMO Topic Ballot, RMO Agenda Builder
+  - to: RMO Topic Ballot, RMO Agenda Builder, RMO Agenda
 - EVT Topic Voted (Unconference)
   - properties: voteId, topicId, attendeeId
   - from: COM Cast Vote
@@ -78,7 +78,7 @@
 - EVT Session Scheduled (Unconference)
   - properties: sessionId, topicId, date, spanId, room
   - from: COM Schedule Session
-  - to: RMO Agenda
+  - to: RMO Agenda Builder (later slice), RMO Agenda
 
 **RMOs:**
 - RMO Conference Setup (Unconference)
@@ -100,10 +100,10 @@
   - from: EVT Attendee Registered, EVT Topic Suggested (join by attendeeId)
   - to: SCR Topic Ballot
 - RMO Agenda Builder (Unconference)
-  - collections: dates [date] (from startDate..endDate); rooms [room]; spans [spanId, label, startTime, endTime]; unassigned [topicId, title, kind, voteCount]; schedule [date, spanId, room, topicId, title] (empty cells until later Schedule COMs — not projected here)
-  - from: EVT Conference Dates Set, EVT Conference Room Added, EVT Session Span Added, EVT Topic Suggested, EVT Topic Voted (join by topicId)
+  - collections: dates [date] (from startDate..endDate); rooms [room]; spans [spanId, label, startTime, endTime]; unassigned [topicId, title, kind, voteCount]; schedule [date, spanId, room, topicId, title]
+  - from: EVT Conference Dates Set, EVT Conference Room Added, EVT Session Span Added, EVT Topic Suggested, EVT Topic Voted (join by topicId); later slice also from EVT Session Scheduled
   - to: SCR Agenda Builder
-  - (Later Schedule COM SCRs carry filled cells / trimmed unassigned by session from prior Schedule COMs in this WFL. Session Scheduled is only projected on RMO Agenda after those EVTs exist.)
+  - (Appears twice: first after votes with empty schedule; second after Schedule Session COMs, projecting only Session Scheduled on top of that prior state — do not re-join the first slice’s EVTs.)
 - RMO Agenda (Unconference)
   - collections: Agenda [date, spanId, room, topicId, title, kind]; lookups [topicId, title, kind]; dates [date] (from startDate..endDate); rooms [room]; spans [spanId, label]
   - from: EVT Conference Dates Set, EVT Conference Room Added, EVT Session Span Added, EVT Topic Suggested (lookups), EVT Session Scheduled (join lookups for title, kind)
@@ -116,9 +116,7 @@
 - WFL4 Suggest a topic: SLC20–SLC29, ends EVT Topic Suggested (10 suggestions)
 - WFL5 Vote on topics: SLC30–SLC40, ends EVT Topic Voted (10 votes; T-3 and T-9 never receive a vote)
 - WFL6 Close registration: SLC41, ends EVT Registration Closed
-- WFL7 Build the agenda: SLC42–SLC51, ends SCR Agenda (8 slots filled)
-
-
+- WFL7 Build the agenda: SLC42–SLC52, ends SCR Agenda (8 slots filled)
 
 **MAPs:**
 - MAP Signup Url: signupToken → signupUrl, on EVT Registration Opened → RMO Signup QR (SLC10)
@@ -129,23 +127,21 @@
 
 **Diagram:**
 
-| | SLC1 | SLC2 | SLC3 | SLC4 | SLC5 | SLC6 | SLC7 | SLC8 | SLC9 | SLC10 | SLC11 | SLC12 | SLC13 | SLC14 | SLC15 | SLC16 | SLC17 | SLC18 | SLC19 | SLC20 | SLC21 | SLC22 | SLC23 | SLC24 | SLC25 | SLC26 | SLC27 | SLC28 | SLC29 | SLC30 | SLC31 | SLC32 | SLC33 | SLC34 | SLC35 | SLC36 | SLC37 | SLC38 | SLC39 | SLC40 | SLC41 | SLC42 | SLC43 | SLC44 | SLC45 | SLC46 | SLC47 | SLC48 | SLC49 | SLC50 | SLC51 |
+| | SLC1 | SLC2 | SLC3 | SLC4 | SLC5 | SLC6 | SLC7 | SLC8 | SLC9 | SLC10 | SLC11 | SLC12 | SLC13 | SLC14 | SLC15 | SLC16 | SLC17 | SLC18 | SLC19 | SLC20 | SLC21 | SLC22 | SLC23 | SLC24 | SLC25 | SLC26 | SLC27 | SLC28 | SLC29 | SLC30 | SLC31 | SLC32 | SLC33 | SLC34 | SLC35 | SLC36 | SLC37 | SLC38 | SLC39 | SLC40 | SLC41 | SLC42 | SLC43 | SLC44 | SLC45 | SLC46 | SLC47 | SLC48 | SLC49 | SLC50 | SLC51 | SLC52 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **WFL** | WFL1 Set up conference | WFL1 | WFL1 | WFL1 | WFL1 | WFL1 | WFL1 | WFL1 | WFL2 Open registration | WFL2 | WFL3 Sign up as an attendee | WFL3 | WFL3 | WFL3 | WFL3 | WFL3 | WFL3 | WFL3 | WFL3 | WFL4 Suggest a topic | WFL4 | WFL4 | WFL4 | WFL4 | WFL4 | WFL4 | WFL4 | WFL4 | WFL4 | WFL5 Vote on topics | WFL5 | WFL5 | WFL5 | WFL5 | WFL5 | WFL5 | WFL5 | WFL5 | WFL5 | WFL5 | WFL6 Close registration | WFL7 Build the agenda | WFL7 | WFL7 | WFL7 | WFL7 | WFL7 | WFL7 | WFL7 | WFL7 | WFL7 |
-| **UBA: Alex (Organizer)** | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Open Registration Form | SCR Signup QR |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SCR Close Registration | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda |
+| **UBA: Alex (Organizer)** | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Setup Wizard | SCR Open Registration Form | SCR Signup QR |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SCR Close Registration | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda Builder | SCR Agenda |
 | **UBA: Pat (Attendee)** |  |  |  |  |  |  |  |  |  |  | SCR Signup Form (title) | SCR Signup Form | SCR Signup Confirmation |  |  |  |  |  |  | SCR Suggest Topic Form |  |  | SCR Suggest Topic Form |  |  | SCR Suggest Topic Form |  |  | SCR Suggest Topic Form | SCR Topic Ballot | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  |  |  |  |  |  |  |  |  | SCR Agenda |
 | **UBA: Riley (Attendee)** |  |  |  |  |  |  |  |  |  |  |  |  |  | SCR Signup Form (title) | SCR Signup Form |  |  |  |  |  | SCR Suggest Topic Form |  |  | SCR Suggest Topic Form |  |  | SCR Suggest Topic Form |  |  | SCR Topic Ballot |  | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  |  |  |  |  |  |  |  |  |  |  | SCR Agenda |
 | **UBA: Jordan (Attendee)** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SCR Signup Form (title) | SCR Signup Form | SCR Signup Form | SCR Signup Form |  |  | SCR Suggest Topic Form |  |  | SCR Suggest Topic Form |  |  | SCR Suggest Topic Form |  | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  | SCR Topic Ballot |  |  |  |  |  |  |  |  |  |  |  | SCR Agenda |
-| **MBA** | COM Set Conference Dates | COM Add Conference Room | COM Add Conference Room |  | COM Add Session Span | COM Add Session Span |  | RMO Conference Setup | COM Open Registration | RMO Signup QR ← MAP Signup Url |  | COM Register Attendee | RMO Registrations |  | COM Register Attendee |  | COM Register Attendee |  | COM Register Attendee | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | RMO Topic Ballot | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Close Registration | RMO Agenda Builder | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | RMO Agenda |
+| **MBA** | COM Set Conference Dates | COM Add Conference Room | COM Add Conference Room |  | COM Add Session Span | COM Add Session Span |  | RMO Conference Setup | COM Open Registration | RMO Signup QR ← MAP Signup Url |  | COM Register Attendee | RMO Registrations |  | COM Register Attendee |  | COM Register Attendee |  | COM Register Attendee | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | COM Suggest Topic | RMO Topic Ballot | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Cast Vote | COM Close Registration | RMO Agenda Builder | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | COM Schedule Session | RMO Agenda Builder | RMO Agenda |
 | **LBA: Unconference** | EVT Conference Dates Set | EVT Conference Room Added | EVT Conference Room Added |  | EVT Session Span Added | EVT Session Span Added |  |  | EVT Registration Opened |  |  | EVT Attendee Registered |  |  | EVT Attendee Registered |  | ERR Name Required |  | EVT Attendee Registered | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested | EVT Topic Suggested |  | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Topic Voted | EVT Registration Closed |  | EVT Session Scheduled | EVT Session Scheduled | EVT Session Scheduled | EVT Session Scheduled | EVT Session Scheduled | EVT Session Scheduled | EVT Session Scheduled | EVT Session Scheduled |  |
-| **GWT** | Set Dates → Dates Set | Add Room → Room Added | Add Room → Room Added |  | Add Span → Span Added | Add Span → Span Added |  | Conference Setup → … | Open Registration → … | Signup QR → … |  | Register → … | Registrations → … |  |  |  | Register → Name Required |  | Register → … | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Topic Ballot → … |  |  |  |  |  |  |  |  |  |  |  | Agenda Builder → … | Schedule → … |  |  |  |  |  |  |  | Agenda → … |
+| **GWT** | Set Dates → Dates Set | Add Room → Room Added | Add Room → Room Added |  | Add Span → Span Added | Add Span → Span Added |  | Conference Setup → … | Open Registration → … | Signup QR → … |  | Register → … | Registrations → … |  |  |  | Register → Name Required |  | Register → … | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Suggest → Topic Suggested | Topic Ballot → … |  |  |  |  |  |  |  |  |  |  |  | Agenda Builder → … | Schedule → … |  |  |  |  |  |  |  | Agenda Builder → … | Agenda → … |
 
 **Slice types:**
 - COM slices: SLC1, SLC2, SLC3, SLC5, SLC6, SLC9, SLC12, SLC15, SLC17, SLC19, SLC20, SLC21, SLC22, SLC23, SLC24, SLC25, SLC26, SLC27, SLC28, SLC29, SLC31, SLC32, SLC33, SLC34, SLC35, SLC36, SLC37, SLC38, SLC39, SLC40, SLC41, SLC43, SLC44, SLC45, SLC46, SLC47, SLC48, SLC49, SLC50
-- RMO slices: SLC8, SLC10, SLC13, SLC30, SLC42, SLC51
+- RMO slices: SLC8, SLC10, SLC13, SLC30, SLC42, SLC51, SLC52
 - NAV slices: SLC4, SLC7, SLC11, SLC14, SLC16, SLC18
-
-
 
 **Arrows between SLCs:**
 - EVT Conference Dates Set (SLC1) → RMO Conference Setup (SLC8)
@@ -158,11 +154,11 @@
 - EVT Conference Room Added (SLC3) → RMO Agenda Builder (SLC42)
 - EVT Session Span Added (SLC5) → RMO Agenda Builder (SLC42)
 - EVT Session Span Added (SLC6) → RMO Agenda Builder (SLC42)
-- EVT Conference Dates Set (SLC1) → RMO Agenda (SLC51)
-- EVT Conference Room Added (SLC2) → RMO Agenda (SLC51)
-- EVT Conference Room Added (SLC3) → RMO Agenda (SLC51)
-- EVT Session Span Added (SLC5) → RMO Agenda (SLC51)
-- EVT Session Span Added (SLC6) → RMO Agenda (SLC51)
+- EVT Conference Dates Set (SLC1) → RMO Agenda (SLC52)
+- EVT Conference Room Added (SLC2) → RMO Agenda (SLC52)
+- EVT Conference Room Added (SLC3) → RMO Agenda (SLC52)
+- EVT Session Span Added (SLC5) → RMO Agenda (SLC52)
+- EVT Session Span Added (SLC6) → RMO Agenda (SLC52)
 - RMO Signup QR (SLC10) → SCR Signup Form (Pat) (SLC11)
 - RMO Signup QR (SLC10) → SCR Signup Form (Riley) (SLC14)
 - RMO Signup QR (SLC10) → SCR Signup Form (Jordan) (SLC16)
@@ -202,24 +198,32 @@
 - EVT Topic Voted (SLC38) → RMO Agenda Builder (SLC42)
 - EVT Topic Voted (SLC39) → RMO Agenda Builder (SLC42)
 - EVT Topic Voted (SLC40) → RMO Agenda Builder (SLC42)
-- EVT Topic Suggested (SLC20) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC21) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC22) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC23) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC24) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC25) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC26) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC27) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC28) → RMO Agenda (SLC51)
-- EVT Topic Suggested (SLC29) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC43) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC44) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC45) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC46) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC47) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC48) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC49) → RMO Agenda (SLC51)
-- EVT Session Scheduled (SLC50) → RMO Agenda (SLC51)
+- EVT Topic Suggested (SLC20) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC21) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC22) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC23) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC24) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC25) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC26) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC27) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC28) → RMO Agenda (SLC52)
+- EVT Topic Suggested (SLC29) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC43) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC44) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC45) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC46) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC47) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC48) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC49) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC50) → RMO Agenda Builder (SLC51)
+- EVT Session Scheduled (SLC43) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC44) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC45) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC46) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC47) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC48) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC49) → RMO Agenda (SLC52)
+- EVT Session Scheduled (SLC50) → RMO Agenda (SLC52)
 
 **Properties:**
 
@@ -346,7 +350,7 @@ Dates are a single range (startDate..endDate); that range is every calendar day 
   - area Session times
     - label (label) = Morning · 09:00–12:00
     - label (label) = Afternoon · 13:00–16:00
-- GWT timeline (RMO Conference Setup):
+- EMD GWT timeline (RMO Conference Setup):
   - RMO Conference Setup (Unconference): (empty) startDate; endDate; rooms []; spans []
   - EVT Conference Dates Set (SLC1): eventId = E-1, startDate = 2026-06-12, endDate = 2026-06-13
   - RMO Conference Setup: startDate = 2026-06-12, endDate = 2026-06-13; rooms []; spans []
@@ -358,7 +362,6 @@ Dates are a single range (startDate..endDate); that range is every calendar day 
   - RMO Conference Setup: …; spans [morning …]
   - EVT Session Span Added (SLC6): …
   - RMO Conference Setup: …; spans [morning …; afternoon …]
-
 
 **WFL2 Open registration (SLC9–SLC10)**
 
@@ -386,7 +389,7 @@ Dates are a single range (startDate..endDate); that range is every calendar day 
     - label (title) = Adaptech Unconference 2026
     - label Signup link (signupUrl) = https://unconf.example/signup/tok-7f3a
     - label QR (qr) = signupUrl
-- GWT timeline (RMO Signup QR):
+- EMD GWT timeline (RMO Signup QR):
   - RMO Signup QR (Unconference): (empty) eventId, title, signupUrl
   - EVT Registration Opened (SLC9): eventId = E-1, title = Adaptech Unconference 2026, signupToken = tok-7f3a
   - RMO Signup QR (Unconference): eventId = E-1, title = Adaptech Unconference 2026, signupUrl = https://unconf.example/signup/tok-7f3a
@@ -424,7 +427,7 @@ Dates are a single range (startDate..endDate); that range is every calendar day 
   - column
     - label (name) = Pat Lee
     - (attendeeId stays on the RMO / COM path — not on the wire)
-- GWT timeline (RMO Registrations):
+- EMD GWT timeline (RMO Registrations):
   - RMO Registrations (Unconference): (empty) attendeeId, name, eventId
   - EVT Attendee Registered (SLC11): attendeeId = A-1, eventId = E-1, name = Pat Lee
   - RMO Registrations (Unconference): attendeeId = A-1, name = Pat Lee, eventId = E-1
@@ -500,7 +503,6 @@ Dates are a single range (startDate..endDate); that range is every calendar day 
   - EVT Attendee Registered (Unconference): attendeeId = A-3, eventId = E-1, name = Jordan Ortiz
   - COM Register Attendee: eventId = E-1, signupToken = tok-7f3a, name = Jordan Ortiz
   - ERR Already Registered (Unconference), EVT Attendee Registered already exists for name = Jordan Ortiz: name = Jordan Ortiz, message = "Already registered"
-
 
 **WFL4 Suggest a topic (SLC20–SLC29)**
 
@@ -633,7 +635,9 @@ Ten topic suggestions from attendees. T-3 (Lunch spots nearby) and T-9 (Coffee c
     - T-9 | Coffee cart logistics | suggestion | Jordan Ortiz
     - T-10 | Testing Event Models | presentation | Pat Lee
 - SCR Topic Ballot (Pat / Riley / Jordan): table of all 10 topics with Vote buttons (rmo-data)
-- GWT: RMO Topic Ballot grows with each Topic Suggested (lookups already filled from registrations)
+- EMD GWT timeline (RMO Topic Ballot):
+  - RMO Topic Ballot: (empty) Topic Ballot []; lookups []
+  - EVT Attendee Registered / EVT Topic Suggested in story order with RMO after each (lookups then rows grow to T-1…T-10)
 
 **SLC31 (COM slice)**
 - SCR Topic Ballot (Pat): Vote pressed on Remote Facilitation (T-2)
@@ -695,9 +699,9 @@ Ten topic suggestions from attendees. T-3 (Lunch spots nearby) and T-9 (Coffee c
 - COM Close Registration: eventId = E-1
 - EVT Registration Closed (Unconference): eventId = E-1
 
-**WFL7 Build the agenda (SLC42–SLC51)**
+**WFL7 Build the agenda (SLC42–SLC52)**
 
-Eight schedule slots (2 dates × 2 spans × 2 rooms). Organizer schedules the eight topics that received votes; T-3 and T-9 remain unassigned with voteCount 0. SLC42 Agenda Builder projects only earlier EVTs (setup, topics, votes) with an empty schedule. SLC43–SLC50 Schedule SCRs carry filled cells and trimmed unassigned by session from prior Schedule COMs — do not join Session Scheduled back to SLC42. RMO Agenda (SLC51) is the first read model that projects Session Scheduled.
+Eight schedule slots (2 dates × 2 spans × 2 rooms). Organizer schedules the eight topics that received votes; T-3 and T-9 remain unassigned with voteCount 0. SLC42 Agenda Builder projects only earlier EVTs (setup, topics, votes) with an empty schedule — do not join Session Scheduled here. SLC43–SLC50 Schedule SCRs carry filled cells and trimmed unassigned by session from prior Schedule COMs. SLC51 is a second Agenda Builder RMO that projects only the Session Scheduled EVTs on top of that prior state. RMO Agenda (SLC52) projects Session Scheduled for attendees.
 
 **SLC42 (RMO slice)**
 - RMO Agenda Builder (Unconference):
@@ -717,6 +721,9 @@ Eight schedule slots (2 dates × 2 spans × 2 rooms). Organizer schedules the ei
     - T-9 | Coffee cart logistics | suggestion | 0
   - schedule: 8 empty cells
 - SCR Agenda Builder (Alex): Schedule grid radios + Unassigned radios + Schedule button
+- EMD GWT timeline (RMO Agenda Builder):
+  - RMO Agenda Builder: (empty) dates []; rooms []; spans []; unassigned []; schedule []
+  - EVT Conference Dates Set / Room Added / Session Span Added / Topic Suggested ×10 / Topic Voted ×10 with RMO after each → final unassigned sorted by voteCount; schedule still empty
 
 **SLC43 (COM slice)**
 - SCR Agenda Builder (Alex): select Event Sourcing in Practice into 2026-06-12 / Morning / Room A
@@ -759,9 +766,21 @@ Eight schedule slots (2 dates × 2 spans × 2 rooms). Organizer schedules the ei
 - EVT Session Scheduled: sessionId = S-8, topicId = T-10, date = 2026-06-13, spanId = afternoon, room = Room B
 
 **SLC51 (RMO slice)**
-- RMO Agenda (Unconference): 8 Agenda rows (all slots filled); lookups include all 10 topics (T-3, T-9 never scheduled)
+- RMO Agenda Builder (Unconference): same dates/rooms/spans as SLC42; schedule filled with S-1…S-8; unassigned = T-3, T-9 only
+- SCR Agenda Builder (Alex): full grid filled; Unassigned shows T-3 and T-9
+- EMD GWT timeline (RMO Agenda Builder, schedule phase):
+  - RMO Agenda Builder: (SLC42 final state — unassigned sorted by voteCount; schedule empty)
+  - EVT Session Scheduled ×8 (S-1…S-8) with RMO after each → schedule filled; unassigned T-3, T-9
+
+**SLC52 (RMO slice)**
+- RMO Agenda (Unconference): dates/rooms/spans from setup EVTs; lookups T-1…T-10 from Topic Suggested; 8 Agenda rows from Session Scheduled (join lookups for title, kind). T-3 and T-9 stay in lookups only.
 - SCR Agenda (Alex / Pat / Riley / Jordan): full grid
   - 2026-06-12 Morning: Room A = Event Sourcing in Practice; Room B = Accessibility in SPAs
   - 2026-06-12 Afternoon: Room A = Remote Facilitation; Room B = CQRS Patterns
   - 2026-06-13 Morning: Room A = Mob Programming Rituals; Room B = Domain Storytelling
   - 2026-06-13 Afternoon: Room A = Open Space Dynamics; Room B = Testing Event Models
+- EMD GWT timeline (RMO Agenda):
+  - RMO Agenda: (empty) Agenda []; lookups []; dates []; rooms []; spans []
+  - EVT Conference Dates Set / Room Added ×2 / Session Span Added ×2 → dates, rooms, spans
+  - EVT Topic Suggested ×10 with RMO after each → lookups T-1…T-10
+  - EVT Session Scheduled ×8 (S-1…S-8) with RMO after each → eight Agenda rows (title, kind from lookups)
